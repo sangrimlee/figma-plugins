@@ -1,0 +1,9 @@
+{
+  "name": "Generate Style From Code",
+  "id": "1220657810251816178",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "main": "./dist/code.js",
+  "ui": "./dist/index.html",
+  "capabilities": ["textreview"]
+}
