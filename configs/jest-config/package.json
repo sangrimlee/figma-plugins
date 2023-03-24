@@ -1,0 +1,13 @@
+{
+  "name": "@sangrimlee/jest-config",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
