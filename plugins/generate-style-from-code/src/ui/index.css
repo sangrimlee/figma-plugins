@@ -13,3 +13,9 @@
     @apply flex h-full w-full flex-col;
   }
 }
+
+@layer components {
+  .content-area {
+    @apply mx-auto w-full max-w-2xl px-6;
+  }
+}

@@ -1,5 +1,7 @@
+import Layout from './components/Layout';
+
 const App = () => {
-  return <div>Generate Style From Code</div>;
+  return <Layout>Application</Layout>;
 };
 
 export default App;
