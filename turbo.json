@@ -10,6 +10,9 @@
     "test": {
       "cache": true
     },
+    "test:watch": {
+      "cache": false
+    },
     "dev": {
       "cache": false
     },
