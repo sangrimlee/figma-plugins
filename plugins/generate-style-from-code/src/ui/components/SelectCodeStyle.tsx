@@ -1,14 +1,7 @@
 import { CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Select from '@radix-ui/react-select';
 
-import { CssLogoIcon, JsonLogoIcon, StitchesLogoIcon, TailwindCssLogoIcon } from './icon';
-
-const CODE_STYLES = [
-  { name: 'css', fileType: 'css', logo: CssLogoIcon },
-  { name: 'json', fileType: 'json', logo: JsonLogoIcon },
-  { name: 'tailwindcss', fileType: 'javascript', logo: TailwindCssLogoIcon },
-  { name: 'stitches', fileType: 'javascript', logo: StitchesLogoIcon },
-];
+import { CODE_LIST } from '../constants/code';
 
 interface SelectCodeStyleItemProps {
   value: string;
@@ -31,14 +24,14 @@ const SelectCodeStyleItem = ({ children, value }: SelectCodeStyleItemProps) => {
   );
 };
 
-interface SelectRootProps {
+interface SelectCodeStyleProps<T extends string> {
   name: string;
-  value: string;
-  onValueChange: (value: string) => void;
+  value: T;
+  onValueChange: (value: T) => void;
 }
 
-const CodeStyleSelect = (props: SelectRootProps) => (
-  <Select.Root {...props}>
+const SelectCodeStyle = <T extends string>({ name, value, onValueChange }: SelectCodeStyleProps<T>) => (
+  <Select.Root name={name} value={value} onValueChange={onValueChange}>
     <Select.Trigger className="border-figma-border focus:fill-figma-border-selected flex w-60 items-center justify-between rounded-md border px-3 py-2.5 focus:outline-none">
       <Select.Value placeholder="Select your code style." />
       <Select.Icon>
@@ -54,10 +47,10 @@ const CodeStyleSelect = (props: SelectRootProps) => (
         style={{ width: 'var(--radix-select-trigger-width)' }}
       >
         <Select.Viewport className="flex flex-col gap-y-1 p-1.5">
-          {CODE_STYLES.map(({ name, logo: Logo }) => (
-            <SelectCodeStyleItem value={name} key={name}>
+          {CODE_LIST.map(({ style, logo: Logo }) => (
+            <SelectCodeStyleItem value={style} key={style}>
               <Logo className="h-6 w-6" />
-              {name}
+              {style}
             </SelectCodeStyleItem>
           ))}
         </Select.Viewport>
@@ -66,4 +59,4 @@ const CodeStyleSelect = (props: SelectRootProps) => (
   </Select.Root>
 );
 
-export default CodeStyleSelect;
+export default SelectCodeStyle;

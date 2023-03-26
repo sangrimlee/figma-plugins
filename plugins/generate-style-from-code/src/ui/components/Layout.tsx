@@ -7,12 +7,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <header className="sticky inset-0">
-        <div className="content-area flex h-16 items-center">
-          <h1 className="text-lg font-bold">Generate Style From Code</h1>
-        </div>
-      </header>
-      <main className="content-area pb-12">{children}</main>
+      <main className="content-area flex-1 pt-5 pb-12">{children}</main>
       <footer className="bg-figma-bg-secondary border-figma-border border-t">
         <div className="content-area flex h-16 items-center justify-end">
           <a
