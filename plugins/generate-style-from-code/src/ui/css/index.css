@@ -20,8 +20,4 @@
   .content-area {
     @apply mx-auto w-full max-w-2xl px-6;
   }
-
-  .code-editor {
-    @apply border-figma-border rounded-md border font-mono focus-within:ring-2;
-  }
 }

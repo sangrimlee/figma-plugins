@@ -23,7 +23,7 @@ const CodeEditor = ({ value, onValueChange, language }: CodeEditorProps) => {
   );
 
   return (
-    <div className="code-editor">
+    <div className="code-editor border-figma-border ring-figma-bg-brand max-h-[32rem] overflow-auto rounded-md border font-mono focus-within:ring-2">
       <Editor
         value={value}
         onValueChange={onValueChange}
@@ -32,9 +32,8 @@ const CodeEditor = ({ value, onValueChange, language }: CodeEditorProps) => {
         tabSize={2}
         insertSpaces
         placeholder="Please enter your code."
+        className="text-sm"
         textareaClassName="focus:outline-none"
-        preClassName={`language-${language}`}
-        style={{ fontSize: '0.875rem', minHeight: '20rem' }}
       />
     </div>
   );

@@ -1,3 +1,11 @@
+.code-editor {
+  color: #263238;
+}
+
+.figma-dark .code-editor {
+  color: #eee;
+}
+
 .token.atrule {
   color: #7c4dff;
 }

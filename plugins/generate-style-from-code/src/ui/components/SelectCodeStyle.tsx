@@ -32,7 +32,7 @@ interface SelectCodeStyleProps<T extends string> {
 
 const SelectCodeStyle = <T extends string>({ name, value, onValueChange }: SelectCodeStyleProps<T>) => (
   <Select.Root name={name} value={value} onValueChange={onValueChange}>
-    <Select.Trigger className="border-figma-border focus:fill-figma-border-selected flex w-60 items-center justify-between rounded-md border px-3 py-2.5 focus:outline-none">
+    <Select.Trigger className="border-figma-border ring-figma-bg-brand flex w-60 items-center justify-between rounded-md border px-3 py-2.5 focus:outline-none focus:ring-2">
       <Select.Value placeholder="Select your code style." />
       <Select.Icon>
         <ChevronDownIcon className="h-4 w-4" />
