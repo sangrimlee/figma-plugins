@@ -1,19 +1,19 @@
-import type { CodeLanguage, CodeStyle } from '@/shared/types';
+import type { CodeFormat, CodeLanguage } from '@/shared/types';
 
 import { CssLogoIcon, JsonLogoIcon, StitchesLogoIcon, TailwindCssLogoIcon } from '../components/icon';
 
 export const CODE_LIST: ReadonlyArray<{
-  style: CodeStyle;
+  format: CodeFormat;
   language: CodeLanguage;
   logo: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
 }> = [
-  { style: 'css', language: 'css', logo: CssLogoIcon },
-  { style: 'json', language: 'json', logo: JsonLogoIcon },
-  { style: 'tailwindcss', language: 'javascript', logo: TailwindCssLogoIcon },
-  { style: 'stitches', language: 'javascript', logo: StitchesLogoIcon },
+  { format: 'css', language: 'css', logo: CssLogoIcon },
+  { format: 'json', language: 'json', logo: JsonLogoIcon },
+  { format: 'tailwindcss', language: 'javascript', logo: TailwindCssLogoIcon },
+  { format: 'stitches', language: 'javascript', logo: StitchesLogoIcon },
 ] as const;
 
-export const CODE_LANGUAGE_MAP: Record<CodeStyle, CodeLanguage> = {
+export const CODE_LANGUAGE_MAP: Record<CodeFormat, CodeLanguage> = {
   css: 'css',
   json: 'json',
   tailwindcss: 'javascript',
