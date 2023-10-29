@@ -1,0 +1,3 @@
+{
+  "extends": "@figma-plugins/tsconfig/base.json"
+}

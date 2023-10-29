@@ -1,0 +1,21 @@
+{
+  "name": "@figma-plugins/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "dependencies": {
+    "@vercel/style-guide": "^5.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-turbo": "^1.10.16"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.6",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
