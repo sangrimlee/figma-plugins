@@ -1,0 +1,30 @@
+{
+  "name": "figma-plugins",
+  "private": true,
+  "author": {
+    "name": "sangrimlee",
+    "email": "contact@sangrim.dev"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "clean:workspace": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "prettier -w --cache .",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "typecheck": "turbo run typecheck"
+  },
+  "prettier": "@vercel/style-guide/prettier",
+  "devDependencies": {
+    "@figma-plugins/eslint-config": "workspace:*",
+    "@figma-plugins/tsconfig": "workspace:*",
+    "@vercel/style-guide": "^5.0.1",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.16"
+  },
+  "packageManager": "pnpm@8.10.0",
+  "engines": {
+    "node": "18.x"
+  }
+}
