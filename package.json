@@ -10,6 +10,7 @@
     "clean:workspace": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier -w --cache .",
+    "gen:plugin": "turbo gen plugin",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck"
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@figma-plugins/eslint-config": "workspace:*",
     "@figma-plugins/tsconfig": "workspace:*",
+    "@turbo/gen": "^1.10.16",
     "@vercel/style-guide": "^5.0.1",
     "eslint": "^8.52.0",
     "prettier": "^3.0.3",
