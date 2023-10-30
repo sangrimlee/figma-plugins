@@ -1,0 +1,5 @@
+{
+  "extends": "@figma-plugins/tsconfig/base.json",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
