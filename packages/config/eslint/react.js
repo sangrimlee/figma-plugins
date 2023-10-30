@@ -26,6 +26,7 @@ const config = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'import/no-extraneous-dependencies': ['error', { includeTypes: true }],
   },
   ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.cjs', '*.config.js'],
 };
