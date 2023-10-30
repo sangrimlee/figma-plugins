@@ -10,6 +10,7 @@
     "clean:workspace": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier -w --cache .",
+    "gen:plugin": "turbo gen plugin",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck"
