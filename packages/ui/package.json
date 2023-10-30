@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo dist node_modules",
