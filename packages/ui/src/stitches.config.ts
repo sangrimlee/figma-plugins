@@ -1,23 +1,25 @@
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
 import {
-  borderWidths,
-  fontSizes,
   fonts,
+  fontSizes,
+  fontWeights,
   letterSpacings,
   lineHeights,
+  borderWidths,
   radii,
   shadows,
   sizes,
   space,
-  transitions,
   zIndices,
+  transitions,
 } from './tokens';
 
 export const { styled, css, globalCss, keyframes, config } = createStitches({
   theme: {
     fonts,
     fontSizes,
+    fontWeights,
     lineHeights,
     letterSpacings,
     borderWidths,
