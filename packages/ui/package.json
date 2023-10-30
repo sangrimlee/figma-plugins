@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2"
+    "@radix-ui/react-slot": "^1.0.2",
+    "@stitches/react": "^1.2.8"
   },
   "devDependencies": {
     "@figma-plugins/eslint-config": "workspace:*",
@@ -20,6 +21,7 @@
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "react": "^18.2.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
