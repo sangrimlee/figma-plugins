@@ -1,0 +1,5 @@
+{
+  "extends": "@figma-plugins/tsconfig/react-app.json",
+  "include": [".storybook/**/*.ts", ".storybook/**/*.tsx", "stories"],
+  "exclude": ["node_modules", "dist"]
+}
