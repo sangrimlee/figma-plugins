@@ -1,0 +1,18 @@
+export const zIndices = {
+  0: 0,
+  10: 10,
+  20: 20,
+  30: 30,
+  40: 40,
+  50: 50,
+  dropdown: 1000,
+  sticky: 1020,
+  fixed: 1030,
+  'offcanvas-backdrop': 1040,
+  offcanvas: 1045,
+  'modal-backdrop': 1050,
+  modal: 1055,
+  popover: 1070,
+  tooltip: 1080,
+  toast: 1090,
+};
