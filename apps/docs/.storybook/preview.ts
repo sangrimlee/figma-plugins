@@ -1,6 +1,7 @@
 import './styles/colors.css';
 
 import type { Preview } from '@storybook/react';
+import { theme } from './theme';
 
 const preview: Preview = {
   parameters: {
@@ -15,6 +16,9 @@ const preview: Preview = {
       storySort: {
         order: ['Introduction', 'Foundations', 'Components'],
       },
+    },
+    docs: {
+      theme,
     },
   },
 };
