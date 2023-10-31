@@ -1,0 +1,63 @@
+.sbdocs.sbdocs-wrapper {
+  padding: 2rem 1.25rem;
+}
+
+.sbdocs.sbdocs-content {
+  max-width: 65ch;
+}
+
+.docs-story {
+  background-color: var(--figma-color-bg);
+}
+
+.sbdocs :is(h1:not(.sb-anchor, .sb-unstyled, .sb-unstyled h1)) {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.0125em;
+  margin-bottom: 1.25rem;
+}
+
+.sbdocs :is(h2:not(.sb-anchor, .sb-unstyled, .sb-unstyled h2)) {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.0125em;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.sbdocs :is(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)) {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.sbdocs :is(h4:not(.sb-anchor, .sb-unstyled, .sb-unstyled h4)) {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.sbdocs :is(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),
+.sbdocs :is(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)) {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.sbdocs :is(a:not(.sb-anchor, .sb-unstyled, .sb-unstyled a)) {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.sbdocs :is(em:not(.sb-anchor, .sb-unstyled, .sb-unstyled em)) {
+  font-style: italic;
+}
+
+.sbdocs :is(strong:not(.sb-anchor, .sb-unstyled, .sb-unstyled strong)) {
+  font-weight: 650;
+}
+
+.sbdocs :is(hr:not(.sb-anchor, .sb-unstyled, .sb-unstyled hr)) {
+  margin: 2.5rem 0;
+}
