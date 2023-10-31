@@ -7,8 +7,13 @@ const storybookConfig: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-themes',
-    '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
   ],
   staticDirs: ['../public'],
   typescript: {
