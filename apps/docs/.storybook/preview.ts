@@ -24,6 +24,19 @@ const preview: Preview = {
       theme,
     },
     layout: 'fullscreen',
+    viewport: {
+      viewports: [
+        {
+          name: 'Figma Plugin',
+          styles: {
+            width: '384px',
+            height: '432px',
+          },
+          type: 'desktop',
+        },
+      ],
+      defaultViewport: 'responsive',
+    },
   },
   decorators: [
     withGlobalStyles,
