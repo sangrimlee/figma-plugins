@@ -10,33 +10,47 @@
   background-color: var(--figma-color-bg);
 }
 
+.sbdocs [data-story-block='true'] {
+  border-width: 1px;
+  border-color: var(--figma-color-border);
+}
+
+.sbdocs .innerZoomElementWrapper [data-story-block='true'] {
+  border: none;
+}
+
+.sbdocs [data-story-block='true'] > [data-name] {
+  height: 16rem;
+}
+
 .sbdocs :is(h1:not(.sb-anchor, .sb-unstyled, .sb-unstyled h1)) {
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   font-weight: 700;
   letter-spacing: -0.0125em;
   margin-bottom: 1.25rem;
 }
 
 .sbdocs :is(h2:not(.sb-anchor, .sb-unstyled, .sb-unstyled h2)) {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
-  letter-spacing: -0.0125em;
   border: none;
   margin-bottom: 1rem;
 }
 
 .sbdocs :is(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)) {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 .sbdocs :is(h4:not(.sb-anchor, .sb-unstyled, .sb-unstyled h4)) {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: 700;
+  font-weight: 650;
+  margin-bottom: 0.5rem;
 }
 
 .sbdocs :is(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),

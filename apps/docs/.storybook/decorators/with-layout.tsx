@@ -1,18 +1,20 @@
-import { Box } from '@figma-plugins/ui';
+import { Box, colors } from '@figma-plugins/ui';
 import type { Decorator } from '@storybook/react';
 
 export const withLayout: Decorator = (StoryFn, context) => {
-  const isDocs = context.viewMode === 'docs';
+  const isStory = context.viewMode === 'story';
 
   return (
     <Box
       css={{
+        height: isStory ? '100vh' : '$full',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexWrap: 'nowrap',
+        alignContent: 'center',
+        flexWrap: 'wrap',
         gap: '$400',
-        height: isDocs ? '16rem' : '100vh',
+        backgroundColor: colors.bg.default,
       }}
     >
       <StoryFn />
