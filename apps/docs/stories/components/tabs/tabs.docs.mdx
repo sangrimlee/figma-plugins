@@ -1,0 +1,32 @@
+import { Meta, Primary, Controls, Story, Source } from '@storybook/blocks';
+import * as TabsStories from './tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Usage
+
+### Import
+
+<Source
+  code={`import { Tabs, TabsList, TabsTrigger, TabsContent } from '@figma-plugins/ui';`}
+/>
+
+### Anatomy
+
+<Source
+  code={`
+<Tabs>
+  <TabsList>
+    <TabsTrigger />
+  </TabsList>
+  <TabsContent />
+</Tabs>`}
+/>
