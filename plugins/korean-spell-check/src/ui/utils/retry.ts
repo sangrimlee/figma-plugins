@@ -1,8 +1,4 @@
-function wait(ms: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
+import { wait } from './wait';
 
 export function retry<Return>(
   fetchFn: () => Promise<Return>,
