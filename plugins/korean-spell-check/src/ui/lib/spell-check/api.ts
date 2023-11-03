@@ -1,4 +1,5 @@
 import { http } from '../../utils/http';
+import { getSpellCheckeResult } from './helpers/get-spell-check-result';
 
 const SPELL_CHECK_URL =
   'https://m.search.naver.com/p/csearch/ocontent/util/SpellerProxy';
@@ -35,10 +36,7 @@ export async function requestSpellCheck(query: string, passportKey: string) {
     throw new Error(error);
   }
 
-  return {
-    originHtml: result.origin_html,
-    correctHtml: result.html,
-  };
+  return getSpellCheckeResult(result.origin_html, result.html);
 }
 
 export async function requestPassportKey() {
