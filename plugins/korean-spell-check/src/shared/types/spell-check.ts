@@ -3,3 +3,9 @@ export type SpellCheckReason =
   | 'WRONG_SPACING'
   | 'AMBIGUOUS'
   | 'STATISTICAL_CORRECTION';
+
+export interface SpellCheckResult {
+  reason: SpellCheckReason;
+  origin: string;
+  correct: string;
+}
