@@ -1,28 +1,23 @@
-import { http } from '../http';
+import { http } from '../../utils/http';
 
 const SPELL_CHECK_URL =
   'https://m.search.naver.com/p/csearch/ocontent/util/SpellerProxy';
 
 const PASSPORT_KEY_URL = 'https://search.naver.com/search.naver';
 
-export interface SpellCheckResultResponse {
-  errata_count: number;
-  origin_html: string;
-  html: string;
-  notag_html: string;
-}
-
 export interface SpellCheckResponse {
   message: {
     error?: string;
-    result: SpellCheckResultResponse;
+    result: {
+      errata_count: number;
+      origin_html: string;
+      html: string;
+      notag_html: string;
+    };
   };
 }
 
-export async function requestSpellCheck(
-  query: string,
-  passportKey: string,
-): Promise<SpellCheckResultResponse> {
+export async function requestSpellCheck(query: string, passportKey: string) {
   const res = await http(SPELL_CHECK_URL, {
     method: 'GET',
     params: {
@@ -32,11 +27,18 @@ export async function requestSpellCheck(
     },
   });
 
-  const data = (await res.json()) as SpellCheckResponse;
-  if (data.message.error) {
-    throw new Error(data.message.error);
+  const {
+    message: { error, result },
+  } = (await res.json()) as SpellCheckResponse;
+
+  if (error) {
+    throw new Error(error);
   }
-  return data.message.result;
+
+  return {
+    originHtml: result.origin_html,
+    correctHtml: result.html,
+  };
 }
 
 export async function requestPassportKey() {
