@@ -1,5 +1,5 @@
 import { http } from '../../utils/http';
-import { getSpellCheckeResult } from './helpers/get-spell-check-result';
+import { getSpellCheckeResult } from './utils';
 
 const SPELL_CHECK_URL =
   'https://m.search.naver.com/p/csearch/ocontent/util/SpellerProxy';
