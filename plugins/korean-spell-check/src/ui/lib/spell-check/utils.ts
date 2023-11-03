@@ -40,3 +40,17 @@ export function getSpellCheckReason(reason: string): SpellCheckReason {
       throw Error('WRONG_SPELL_CHECK_REASON');
   }
 }
+
+export function removeDuplicateResult(results: SpellCheckResult[]) {
+  const set = new Set<string>();
+  const removedResults: SpellCheckResult[] = [];
+
+  for (const result of results) {
+    if (!set.has(result.origin)) {
+      removedResults.push(result);
+      set.add(result.origin);
+    }
+  }
+
+  return removedResults;
+}
