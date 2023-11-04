@@ -30,14 +30,13 @@ export function getSpellCheckReason(reason: string): SpellCheckReason {
   switch (reason) {
     case 'green_text':
       return 'WRONG_SPACING';
-    case 'red_text':
-      return 'WRONG_SPELLING';
     case 'purple_text':
       return 'AMBIGUOUS';
     case 'blue_text':
       return 'STATISTICAL_CORRECTION';
+    case 'red_text':
     default:
-      throw Error('WRONG_SPELL_CHECK_REASON');
+      return 'WRONG_SPELLING';
   }
 }
 
@@ -53,4 +52,31 @@ export function removeDuplicateResult(results: SpellCheckResult[]) {
   }
 
   return removedResults;
+}
+
+export function splitByLine(text: string) {
+  return text.split(/(?:(?<=[.!?])\s+)|(?:[\n\r]+)/);
+}
+
+export function createQueries(lines: string[], limit: number): string[] {
+  const queries: string[] = [];
+
+  let prevQuery = '';
+  for (const line of lines) {
+    if (limit < line.length) {
+      queries.push(...createQueries(line.split(' '), limit));
+      continue;
+    }
+    if (prevQuery.length + line.length < limit) {
+      prevQuery = prevQuery ? `${prevQuery}\n${line}` : line;
+    } else {
+      queries.push(prevQuery);
+      prevQuery = line;
+    }
+  }
+  if (prevQuery) {
+    queries.push(prevQuery);
+  }
+
+  return queries;
 }
