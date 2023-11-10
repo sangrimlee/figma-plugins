@@ -13,6 +13,11 @@ const variants = [
   'success',
   'warning',
   'disabled',
+  'onbrand',
+  'oncomponent',
+  'ondanger',
+  'onsuccess',
+  'onwarning',
 ] as const;
 const aligns = ['start', 'center', 'end', 'justify'] as const;
 const decorations = ['underline', 'line-through'] as const;
