@@ -1,9 +1,5 @@
 import { Flex, Text, colors, styled } from '@figma-plugins/ui';
-import {
-  CheckCircledIcon,
-  Cross1Icon,
-  DotFilledIcon,
-} from '@radix-ui/react-icons';
+import { CheckCircledIcon, Cross1Icon } from '@radix-ui/react-icons';
 import type { SpellCheckResult } from '@/shared/types';
 
 interface SpellCheckResultListProps {
@@ -65,66 +61,80 @@ interface SpellCheckResultItemProps {
 
 export function SpellCheckResultItem({ result }: SpellCheckResultItemProps) {
   return (
-    <Wrapper>
-      <Flex
-        css={{
-          position: 'relative',
-          marginBottom: '$150',
-        }}
-        items="center"
+    <Flex
+      css={{
+        position: 'relative',
+        borderWidth: '$1',
+        borderRadius: '$md',
+        padding: '$300 $500 $400',
+      }}
+      direction="column"
+      items="start"
+    >
+      <ReasonText reason={result.reason} size="sm" variant="secondary">
+        {reasonLabel[result.reason]}
+      </ReasonText>
+      <OriginText breakWord={false} size="sm" weight="medium">
+        {result.origin}
+      </OriginText>
+      <CorrectText
+        breakWord={false}
+        size="sm"
+        variant="onbrand"
+        weight="semibold"
       >
-        <ReasonIcon height={16} reason={result.reason} width={16} />
-        <Text size="sm" variant="secondary">
-          {reasonLabel[result.reason]}
-        </Text>
-      </Flex>
-
-      <Flex direction="column" gap="200" items="start">
-        <OriginText breakWord={false} size="sm">
-          {result.origin}
-        </OriginText>
-        <CorrectText breakWord={false} size="sm" weight="semibold">
-          {result.correct}
-        </CorrectText>
-      </Flex>
-
-      <RemoveButton>
+        {result.correct}
+      </CorrectText>
+      <RemoveButton type="button">
         <Cross1Icon height={12} width={12} />
       </RemoveButton>
-    </Wrapper>
+    </Flex>
   );
 }
 
-const Wrapper = styled('div', {
+const ReasonText = styled(Text, {
   position: 'relative',
-  borderWidth: '$1',
-  borderRadius: '$md',
-  padding: '$300 $600',
-});
-
-const ReasonIcon = styled(DotFilledIcon, {
-  position: 'absolute',
-  right: '100%',
-  marginRight: '$50',
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '$100',
+  '&::before': {
+    content: '',
+    position: 'absolute',
+    right: '100%',
+    display: 'block',
+    width: '$100',
+    height: '$100',
+    marginRight: '$150',
+    borderRadius: '$full',
+  },
   variants: {
     reason: {
       WRONG_SPACING: {
-        color: '#FFC53D',
+        '&::before': {
+          backgroundColor: '#FFC53D',
+        },
       },
       WRONG_SPELLING: {
-        color: '#E54D2E',
+        '&::before': {
+          backgroundColor: '#E54D2E',
+        },
       },
       AMBIGUOUS: {
-        color: '#6E56CF',
+        '&::before': {
+          backgroundColor: '#6E56CF',
+        },
       },
       STATISTICAL_CORRECTION: {
-        color: '#7CE2FE',
+        '&::before': {
+          backgroundColor: '#7CE2FE',
+        },
       },
     },
   },
 });
 
 const OriginText = styled(Text, {
+  marginBottom: '$200',
   textDecoration: 'underline',
   textDecorationStyle: 'wavy',
   textDecorationColor: colors.text.danger.default,
