@@ -80,6 +80,21 @@ export const Text = styled('p', {
       disabled: {
         color: colors.text.disabled,
       },
+      onbrand: {
+        color: colors.text.onbrand.default,
+      },
+      oncomponent: {
+        color: colors.text.oncomponent.default,
+      },
+      ondanger: {
+        color: colors.text.ondanger.default,
+      },
+      onsuccess: {
+        color: colors.text.onsuccess.default,
+      },
+      onwarning: {
+        color: colors.text.onwarning.default,
+      },
     },
     align: {
       start: {
