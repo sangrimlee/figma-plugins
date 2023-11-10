@@ -1,11 +1,11 @@
 import { globalStyles } from '@figma-plugins/ui';
+import { MainPage, ResultPage } from './pages';
+import { useGlobalStore } from './store';
 
 export function App() {
   globalStyles();
 
-  return (
-    <div>
-      <h1>korean-spell-check</h1>
-    </div>
-  );
+  const contentType = useGlobalStore((state) => state.contentType);
+
+  return <>{contentType !== 'result' ? <MainPage /> : <ResultPage />}</>;
 }
