@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { subscribeWithSelector } from 'zustand/middleware';
 import type { ContentType, SpellCheckResult } from '@/shared/types';
 import { postUIPluginMessage } from './utils/plugin-message';
 
@@ -22,8 +23,8 @@ const initialState: GlobalStoreState = {
   spellCheckResults: [],
 };
 
-export const useGlobalStore = create<GlobalStoreState & GlobalStoreAction>(
-  (set) => ({
+export const useGlobalStore = create(
+  subscribeWithSelector<GlobalStoreState & GlobalStoreAction>((set) => ({
     ...initialState,
     changeContentType: (contentType) => {
       set(() => ({ contentType }));
@@ -47,15 +48,18 @@ export const useGlobalStore = create<GlobalStoreState & GlobalStoreAction>(
     reset: () => {
       set(() => initialState);
     },
-  }),
+  })),
 );
 
-useGlobalStore.subscribe((state, prevState) => {
-  if (state.contentType === prevState.contentType) {
-    return;
-  }
-  postUIPluginMessage({
-    type: 'ON_CHANGE_CONTENT_TYPE',
-    contentType: state.contentType,
-  });
-});
+useGlobalStore.subscribe(
+  (state) => state.contentType,
+  (contentType) => {
+    postUIPluginMessage({
+      type: 'ON_CHANGE_CONTENT_TYPE',
+      contentType,
+    });
+  },
+  {
+    fireImmediately: true,
+  },
+);
