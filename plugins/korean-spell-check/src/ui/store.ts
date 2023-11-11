@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { ContentType, SpellCheckResult } from '@/shared/types';
+import { postUIPluginMessage } from './utils/plugin-message';
 
 export interface GlobalStoreState {
   contentType: ContentType;
@@ -48,3 +49,13 @@ export const useGlobalStore = create<GlobalStoreState & GlobalStoreAction>(
     },
   }),
 );
+
+useGlobalStore.subscribe((state, prevState) => {
+  if (state.contentType === prevState.contentType) {
+    return;
+  }
+  postUIPluginMessage({
+    type: 'ON_CHANGE_CONTENT_TYPE',
+    contentType: state.contentType,
+  });
+});
