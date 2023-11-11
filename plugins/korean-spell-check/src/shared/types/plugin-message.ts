@@ -35,7 +35,3 @@ export type UIPluginMessage =
       type: 'RUN_SPELL_CHECK';
       results: SpellCheckResult[];
     };
-
-export type UIPluginMessageEvent = MessageEvent<{
-  pluginMessage: FigmaPluginMessage;
-}>;
