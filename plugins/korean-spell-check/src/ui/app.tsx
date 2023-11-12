@@ -1,11 +1,12 @@
 import { globalStyles } from '@figma-plugins/ui';
+import { MainPage, ResultPage } from './pages';
+import { useGlobalStore } from './store';
+import { useMessageEventListener } from './hooks';
 
 export function App() {
+  const contentType = useGlobalStore((state) => state.contentType);
   globalStyles();
+  useMessageEventListener();
 
-  return (
-    <div>
-      <h1>korean-spell-check</h1>
-    </div>
-  );
+  return <>{contentType !== 'result' ? <MainPage /> : <ResultPage />}</>;
 }

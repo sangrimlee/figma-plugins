@@ -1,6 +1,7 @@
 import { Flex, Text, colors, styled } from '@figma-plugins/ui';
 import { CheckCircledIcon, Cross1Icon } from '@radix-ui/react-icons';
 import type { SpellCheckResult } from '@/shared/types';
+import { useGlobalStore } from '../store';
 
 interface SpellCheckResultListProps {
   results: SpellCheckResult[];
@@ -60,6 +61,10 @@ interface SpellCheckResultItemProps {
 }
 
 export function SpellCheckResultItem({ result }: SpellCheckResultItemProps) {
+  const removeSpellCheckResult = useGlobalStore(
+    (state) => state.removeSpellCheckResult,
+  );
+
   return (
     <Flex
       css={{
@@ -85,7 +90,13 @@ export function SpellCheckResultItem({ result }: SpellCheckResultItemProps) {
       >
         {result.correct}
       </CorrectText>
-      <RemoveButton type="button">
+      <RemoveButton
+        aria-label="맞춤법 검사 결과 제외"
+        onClick={() => {
+          removeSpellCheckResult(result.origin);
+        }}
+        type="button"
+      >
         <Cross1Icon height={12} width={12} />
       </RemoveButton>
     </Flex>

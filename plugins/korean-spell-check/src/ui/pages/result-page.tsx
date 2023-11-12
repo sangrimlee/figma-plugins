@@ -1,21 +1,27 @@
 import { Button, Flex, Text, colors, styled } from '@figma-plugins/ui';
-import type { SpellCheckResult } from '@/shared/types';
 import { SpellCheckResultList } from '../components/spell-check-result';
+import { useGlobalStore } from '../store';
 
 export function ResultPage() {
-  const results: SpellCheckResult[] = [];
+  const spellCheckResults = useGlobalStore((state) => state.spellCheckResults);
+  const reset = useGlobalStore((state) => state.reset);
 
   return (
     <MainWrapper direction="column" gap="300">
       <Text as="h1" weight="bold">
         검사 결과
       </Text>
-      <SpellCheckResultList results={results} />
+      <SpellCheckResultList results={spellCheckResults} />
       <ActionsWrapper gap="200" items="center" justify="end">
-        <Button size="sm" variant="brand">
+        <Button
+          disabled={spellCheckResults.length === 0}
+          size="sm"
+          type="button"
+          variant="brand"
+        >
           모두 수정
         </Button>
-        <Button size="sm" variant="danger">
+        <Button onClick={reset} size="sm" type="button" variant="danger">
           취소
         </Button>
       </ActionsWrapper>
