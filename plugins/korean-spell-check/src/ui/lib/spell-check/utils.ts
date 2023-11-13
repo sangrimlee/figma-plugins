@@ -1,4 +1,5 @@
 import type { SpellCheckReason, SpellCheckResult } from '@/shared/types';
+import { decodeHtml } from '@/ui/utils/decode-html';
 
 const ORIGIN_REGEX = /<span (?:[^<>/]+)>(?<origin>[^<>/]+)<\/span>/g;
 const CORRECT_REGEX =
@@ -14,12 +15,12 @@ export function getSpellCheckeResult(
   const results: SpellCheckResult[] = [];
   const errorCount = Math.min(origins.length, corrects.length);
   for (let i = 0; i < errorCount; i++) {
-    const origin = origins[i][1];
     const reason = getSpellCheckReason(corrects[i][1]);
-    const correct = corrects[i][2];
+    const origin = decodeHtml(origins[i][1]);
+    const correct = decodeHtml(corrects[i][2]);
     results.push({
-      origin,
       reason,
+      origin,
       correct,
     });
   }
