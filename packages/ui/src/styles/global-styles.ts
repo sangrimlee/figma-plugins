@@ -198,4 +198,11 @@ export const globalStyles = globalCss({
   '[hidden]': {
     display: 'none',
   },
+
+  '.figma-light': {
+    colorScheme: 'light',
+  },
+  '.figma-dark': {
+    colorScheme: 'dark',
+  },
 });
