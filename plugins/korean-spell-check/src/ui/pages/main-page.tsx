@@ -1,15 +1,18 @@
 import {
+  Box,
   Button,
   Flex,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
+  animations,
 } from '@figma-plugins/ui';
 import { BoxIcon, LayersIcon } from '@radix-ui/react-icons';
 import type { ContentType } from '@/shared/types';
-import { NodeBadge } from '../components';
+import { LoaderIcon, NodeBadge } from '../components';
 import { useGlobalStore } from '../store';
+import { useSpellCheck } from '../hooks';
 
 function PageContent() {
   return (
@@ -68,6 +71,7 @@ function LayerContent() {
 export function MainPage() {
   const contentType = useGlobalStore((state) => state.contentType);
   const changeContentType = useGlobalStore((state) => state.changeContentType);
+  const { isLoading, getSpellCheckResults } = useSpellCheck();
 
   return (
     <Flex as="main" css={{ height: '100vh' }} direction="column">
@@ -97,12 +101,23 @@ export function MainPage() {
       </Tabs>
       <Flex css={{ padding: '$300' }} direction="column">
         <Button
-          aria-label="선택한 레이어에 대한 맞춤법 검사하기"
+          aria-label="맞춤법 검사하기"
+          disabled={isLoading}
+          onClick={getSpellCheckResults}
           size="md"
           type="button"
           variant="brand"
         >
-          검사하기
+          {isLoading ? (
+            <Box
+              as={LoaderIcon}
+              css={{
+                animation: `${animations.spin.name} 1s linear infinite`,
+                marginRight: '$200',
+              }}
+            />
+          ) : null}
+          <span>검사하기</span>
         </Button>
       </Flex>
     </Flex>

@@ -2,6 +2,7 @@ import type { UIPluginMessage } from '@/shared/types';
 import manifest from 'manifest.json';
 import { figmaStore } from './figma-store';
 import { debounce } from './utils/debounce';
+import { replaceBySpellCheckResults } from './utils/replace';
 
 figma.skipInvisibleInstanceChildren = true;
 
@@ -40,6 +41,12 @@ figma.ui.onmessage = (pluginMessage: UIPluginMessage) => {
   switch (pluginMessage.type) {
     case 'ON_CHANGE_CONTENT_TYPE':
       figmaStore.getState().setContentType(pluginMessage.contentType);
+      break;
+    case 'RUN_SPELL_CHECK':
+      replaceBySpellCheckResults(
+        figmaStore.getState().textNodes,
+        pluginMessage.spellCheckResults,
+      );
       break;
     default:
       break;

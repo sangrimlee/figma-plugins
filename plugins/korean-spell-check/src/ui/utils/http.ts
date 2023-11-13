@@ -27,7 +27,7 @@ export async function http(
   { params, proxy, ...options }: HttpOptions,
 ) {
   const response = await fetch(createURL(url, { params, proxy }), options);
-  if (response.ok) {
+  if (!response.ok) {
     throw new Error('NETWORK_REQUEST_FAILED');
   }
   return response;

@@ -9,6 +9,7 @@ type PluginMessageEvent = MessageEvent<{
 
 export function useMessageEventListener() {
   const { toast } = useToast();
+  const reset = useGlobalStore((state) => state.reset);
   const setCharacters = useGlobalStore((state) => state.setCharacters);
 
   const handleMessageEvent = useCallback(
@@ -23,6 +24,7 @@ export function useMessageEventListener() {
             title: '맞춤법 검사 완료',
             description: '맞춤법에 맞게 모두 수정되었습니다.',
           });
+          reset();
           break;
         case 'RUN_SPELL_CHECK_FAILED':
           toast({
@@ -31,12 +33,13 @@ export function useMessageEventListener() {
             description:
               '맞춤법에 수정에 실패하였습니다. 다시 한 번 시도해주세요.',
           });
+          reset();
           break;
         default:
           break;
       }
     },
-    [toast, setCharacters],
+    [toast, setCharacters, reset],
   );
 
   useEffect(() => {

@@ -33,5 +33,5 @@ export type UIPluginMessage =
     }
   | {
       type: 'RUN_SPELL_CHECK';
-      results: SpellCheckResult[];
+      spellCheckResults: SpellCheckResult[];
     };
