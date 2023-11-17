@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Flex,
+  ScrollArea,
   Text,
   animations,
   colors,
@@ -27,11 +28,15 @@ export function ResultPage() {
   };
 
   return (
-    <MainWrapper direction="column" gap="300">
-      <Text as="h1" weight="bold">
-        검사 결과
-      </Text>
-      <SpellCheckResultList results={spellCheckResults} />
+    <>
+      <MainPageArea orientation="vertical" scrollHideDelay={200} type="hover">
+        <MainWrapper direction="column" gap="300">
+          <Text as="h1" weight="bold">
+            검사 결과
+          </Text>
+          <SpellCheckResultList results={spellCheckResults} />
+        </MainWrapper>
+      </MainPageArea>
       <ActionsWrapper gap="200" items="center" justify="end">
         <Button
           disabled={spellCheckResults.length === 0 || isLoading}
@@ -55,21 +60,26 @@ export function ResultPage() {
           취소
         </Button>
       </ActionsWrapper>
-    </MainWrapper>
+    </>
   );
 }
 
+const MainPageArea = styled(ScrollArea, {
+  height: 'calc(100vh - $1400)',
+});
+
 const MainWrapper = styled(Flex, {
-  padding: '$300 $400 $2000',
+  padding: '$300 $400',
 });
 
 const ActionsWrapper = styled(Flex, {
   position: 'fixed',
+  height: '$1400',
   left: 0,
   right: 0,
   bottom: 0,
   zIndex: '$10',
   borderTopWidth: '$1',
-  padding: '$300 $400',
+  padding: '0 $400',
   backgroundColor: colors.bg.default,
 });
