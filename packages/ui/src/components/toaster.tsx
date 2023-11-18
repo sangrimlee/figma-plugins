@@ -12,7 +12,7 @@ import {
 import { Box } from './box';
 
 const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 50000;
+const TOAST_REMOVE_DELAY = 2500;
 
 type ToasterToast = ToastProps & {
   id: string;
