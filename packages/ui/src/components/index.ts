@@ -6,3 +6,4 @@ export { Toast, type ToastProps } from './toast';
 export { Toaster, useToast } from './toaster';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 export { ScrollArea } from './scroll-area';
+export { Loader, type LoaderProps } from './loader';
