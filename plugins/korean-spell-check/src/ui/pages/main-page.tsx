@@ -1,16 +1,15 @@
 import {
-  Box,
   Button,
   Flex,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-  animations,
+  Loader,
 } from '@figma-plugins/ui';
 import { BoxIcon, LayersIcon } from '@radix-ui/react-icons';
 import type { ContentType } from '@/shared/types';
-import { LoaderIcon, NodeBadge } from '../components';
+import { NodeBadge } from '../components';
 import { useGlobalStore } from '../store';
 import { useSpellCheck } from '../hooks';
 
@@ -108,15 +107,7 @@ export function MainPage() {
           type="button"
           variant="brand"
         >
-          {isLoading ? (
-            <Box
-              as={LoaderIcon}
-              css={{
-                animation: `${animations.spin.name} 1s linear infinite`,
-                marginRight: '$200',
-              }}
-            />
-          ) : null}
+          {isLoading ? <Loader animate css={{ marginRight: '$200' }} /> : null}
           <span>검사하기</span>
         </Button>
       </Flex>
