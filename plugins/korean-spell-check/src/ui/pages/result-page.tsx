@@ -1,18 +1,16 @@
 import {
-  Box,
   Button,
   Flex,
   ScrollArea,
   Text,
-  animations,
   colors,
   styled,
+  Loader,
 } from '@figma-plugins/ui';
 import { useState } from 'react';
 import { SpellCheckResultList } from '../components/spell-check-result';
 import { useGlobalStore } from '../store';
 import { postUIPluginMessage } from '../utils/plugin-message';
-import { LoaderIcon } from '../components';
 
 export function ResultPage() {
   const spellCheckResults = useGlobalStore((state) => state.spellCheckResults);
@@ -45,15 +43,7 @@ export function ResultPage() {
           type="button"
           variant="brand"
         >
-          {isLoading ? (
-            <Box
-              as={LoaderIcon}
-              css={{
-                animation: `${animations.spin.name} 1s linear infinite`,
-                marginRight: '$200',
-              }}
-            />
-          ) : null}
+          {isLoading ? <Loader animate css={{ marginRight: '$200' }} /> : null}
           모두 수정
         </Button>
         <Button onClick={reset} size="sm" type="button" variant="danger">
