@@ -1,0 +1,61 @@
+import { Meta, Primary, Controls, Story, Source } from '@storybook/blocks';
+import * as SelectStories from './select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Usage
+
+### Import
+
+<Source
+  code={`import {
+  Select,
+  SelectValue,
+  SelectGroup,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+} from '@figma-plugins/ui';`}
+/>
+
+### Anatomy
+
+<Source
+  code={`
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      <SelectLabel />
+      <SelectItem />
+    </SelectGroup>
+    <SelectSeparator />
+    <SelectGroup>
+      <SelectLabel />
+      <SelectItem />
+    </SelectGroup>
+  </SelectContent>
+</Select>`}
+/>
+
+## Examples
+
+### Scrollable
+
+<Story of={SelectStories.Scrollable} />
+
+### Popper
+
+<Story of={SelectStories.Popper} />
