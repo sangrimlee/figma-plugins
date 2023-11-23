@@ -5,5 +5,8 @@
   "editorType": ["figma"],
   "main": "./dist/code.js",
   "ui": "./dist/ui.html",
-  "capabilities": ["textreview"]
+  "capabilities": ["textreview"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
 }
