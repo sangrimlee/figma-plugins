@@ -1,0 +1,37 @@
+import { Meta, Primary, Controls, Story, Source } from '@storybook/blocks';
+import * as PopoverStories from './popover.stories';
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Usage
+
+### Import
+
+<Source
+  code={`import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverClose,
+} from '@figma-plugins/ui';`}
+/>
+
+### Anatomy
+
+<Source
+  code={`
+<Popover>
+  <PopoverTrigger />
+  <PopoverContent>
+    <PopoverClose />
+  </PopoverContent>
+</Popover>`}
+/>
