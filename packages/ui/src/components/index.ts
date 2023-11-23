@@ -1,6 +1,7 @@
 export { Box } from './box';
 export { Button, type ButtonVariantProps } from './button';
 export { Flex, type FlexVariantProps } from './flex';
+export { NodeBadge, type NodeBadgeProps } from './node-badge';
 export { Loader, type LoaderProps } from './loader';
 export { Popover, PopoverTrigger, PopoverContent } from './popover';
 export { RadioGroup, RadioGroupItem } from './radio-group';
