@@ -6,10 +6,10 @@ import {
   TabsList,
   TabsTrigger,
   Loader,
+  NodeBadge,
 } from '@figma-plugins/ui';
 import { BoxIcon, LayersIcon } from '@radix-ui/react-icons';
 import type { ContentType } from '@/shared/types';
-import { NodeBadge } from '../components';
 import { useGlobalStore } from '../store';
 import { useSpellCheck } from '../hooks';
 
@@ -22,13 +22,14 @@ function PageContent() {
       items="center"
       justify="center"
     >
-      <Flex items="center">
-        현재 페이지의 모든
-        <NodeBadge type="text" />
-        <NodeBadge type="frame" />
+      <Flex gap="100" items="center">
+        <span>현재 페이지의 모든</span>
+        <NodeBadge nodeType="text" />
+        <NodeBadge nodeType="frame" />
       </Flex>
-      <Flex items="center">
-        <NodeBadge type="group" />에 대해서 맞춤법 검사를 실행합니다.
+      <Flex gap="100" items="center">
+        <NodeBadge nodeType="group" />
+        <span>에 대해서 맞춤법 검사를 실행합니다.</span>
       </Flex>
     </Flex>
   );
@@ -47,20 +48,21 @@ function LayerContent() {
     >
       {characters.length === 0 ? (
         <>
-          <Flex items="center">
-            선택한
-            <NodeBadge type="text" />
-            <NodeBadge type="frame" />
-            <br />
+          <Flex gap="100" items="center">
+            <span>선택한</span>
+            <NodeBadge nodeType="text" />
+            <NodeBadge nodeType="frame" />
           </Flex>
-          <Flex items="center">
-            <NodeBadge type="group" />에 대해서 맞춤법 검사를 실행합니다.
+          <Flex gap="100" items="center">
+            <NodeBadge nodeType="group" />
+            <span>에 대해서 맞춤법 검사를 실행합니다.</span>
           </Flex>
         </>
       ) : (
-        <Flex items="center">
-          {characters.length}개의
-          <NodeBadge type="text" />가 선택되었습니다.
+        <Flex gap="100" items="center">
+          <span>{characters.length}개의</span>
+          <NodeBadge nodeType="text" />
+          <span>가 선택되었습니다.</span>
         </Flex>
       )}
     </Flex>
