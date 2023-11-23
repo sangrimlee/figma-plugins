@@ -3,7 +3,7 @@ import { create } from '@storybook/theming/create';
 export const theme = create({
   base: 'light',
 
-  brandUrl: '/',
+  brandUrl: './',
   brandTarget: '_self',
 
   fontBase:
