@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
-import { managerHead } from './head';
+import { managerHead, previewHead } from './head';
 
 const storybookConfig: StorybookConfig = {
   framework: '@storybook/react-vite',
@@ -22,6 +22,7 @@ const storybookConfig: StorybookConfig = {
     reactDocgen: 'react-docgen',
   },
   managerHead,
+  previewHead,
   viteFinal(config) {
     return mergeConfig(config, {
       build: {

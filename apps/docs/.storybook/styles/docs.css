@@ -6,23 +6,31 @@
   max-width: 65ch;
 }
 
-.docs-story {
+/* Canvas, Primary 관련 스타일  */
+.sbdocs.sbdocs-preview {
+  box-shadow: none;
+}
+
+/* ArgTypes, Controls 관련 스타일 */
+.sbdocs .docblock-argstable {
+  border-collapse: separate;
+}
+.sbdocs .docblock-argstable > .docblock-argstable-body {
+  filter: none;
+}
+
+/* Story 관련 스타일 */
+.sbdocs .sb-story {
   background-color: var(--figma-color-bg);
 }
 
-.sbdocs [data-story-block='true'] {
+.sbdocs :is(.sb-story:not(.sbdocs-preview .sb-story)) {
   border-width: 1px;
   border-color: var(--figma-color-border);
+  border-radius: 0.375rem;
 }
 
-.sbdocs .innerZoomElementWrapper [data-story-block='true'] {
-  border: none;
-}
-
-.sbdocs [data-story-block='true'] > [data-name] {
-  height: 16rem;
-}
-
+/* Markdown 관련 스타일 */
 .sbdocs :is(h1:not(.sb-anchor, .sb-unstyled, .sb-unstyled h1)) {
   font-size: 2rem;
   line-height: 2.5rem;
