@@ -39,7 +39,6 @@ const preview: Preview = {
     },
   },
   decorators: [
-    withGlobalStyles,
     withThemeByClassName({
       themes: {
         light: 'figma-light',
@@ -47,6 +46,7 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
     }),
+    withGlobalStyles,
     withLayout,
   ],
 };
