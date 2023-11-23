@@ -1,7 +1,7 @@
 import { Flex, NodeBadge } from '@figma-plugins/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const nodeTypes = ['text', 'frame', 'group'] as const;
+const nodeTypes = ['text', 'frame', 'group', 'component', 'instance'] as const;
 
 const meta = {
   title: 'components/Node Badge',

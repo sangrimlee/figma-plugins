@@ -1,4 +1,10 @@
-import { FrameIcon, GroupIcon, TextIcon } from '@radix-ui/react-icons';
+import {
+  Component1Icon,
+  ComponentInstanceIcon,
+  FrameIcon,
+  GroupIcon,
+  TextIcon,
+} from '@radix-ui/react-icons';
 import React, { forwardRef } from 'react';
 import { styled } from '@/stitches.config';
 import { colors } from '@/vars';
@@ -15,6 +21,14 @@ const nodeTypes = {
   group: {
     Icon: GroupIcon,
     label: 'Group',
+  },
+  component: {
+    Icon: Component1Icon,
+    label: 'Component',
+  },
+  instance: {
+    Icon: ComponentInstanceIcon,
+    label: 'Instance',
   },
 } as const;
 
