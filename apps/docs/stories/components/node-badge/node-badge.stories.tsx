@@ -37,6 +37,7 @@ export const NodeTypes: Story = {
       ))}
     </Flex>
   ),
+  args: Default.args,
 };
 
 export const HideLabel: Story = {
@@ -47,4 +48,5 @@ export const HideLabel: Story = {
       ))}
     </Flex>
   ),
+  args: Default.args,
 };
