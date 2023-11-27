@@ -1,5 +1,7 @@
 import { create } from 'zustand';
+import { subscribeWithSelector } from 'zustand/middleware';
 import type { GenerateFormState } from '@/shared/types';
+import { postUIPluginMessage } from './utils/plugin-message';
 
 interface GlobalStoreState {
   isSelectedTextNode: boolean;
@@ -24,8 +26,8 @@ const initialState: GlobalStoreState = {
   },
 };
 
-export const useGlobalStore = create<GlobalStoreState & GlobalStoreAction>(
-  (set) => ({
+export const useGlobalStore = create(
+  subscribeWithSelector<GlobalStoreState & GlobalStoreAction>((set) => ({
     ...initialState,
     updateIsSelectedTextNode: (isSelectedTextNode) => {
       set(() => ({ isSelectedTextNode }));
@@ -39,5 +41,15 @@ export const useGlobalStore = create<GlobalStoreState & GlobalStoreAction>(
         },
       }));
     },
-  }),
+  })),
+);
+
+useGlobalStore.subscribe(
+  (state) => state.formState,
+  (formState) => {
+    postUIPluginMessage({
+      type: 'ON_CHANGE_FORM_STATE',
+      formState,
+    });
+  },
 );
