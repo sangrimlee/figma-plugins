@@ -1,11 +1,15 @@
 import { globalStyles } from '@figma-plugins/ui';
+import { FormPage, MainPage } from './pages';
+import { useMessageEventListener } from './hooks';
+import { useGlobalStore } from './store';
 
 export function App() {
-  globalStyles();
-
-  return (
-    <div>
-      <h1>한글입숨</h1>
-    </div>
+  const isSelectedTextNode = useGlobalStore(
+    (state) => state.isSelectedTextNode,
   );
+
+  globalStyles();
+  useMessageEventListener();
+
+  return <>{isSelectedTextNode ? <FormPage /> : <MainPage />}</>;
 }

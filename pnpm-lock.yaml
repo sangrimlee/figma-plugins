@@ -224,6 +224,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      zustand:
+        specifier: ^4.4.6
+        version: 4.4.6(@types/react@18.2.33)(react@18.2.0)
     devDependencies:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
