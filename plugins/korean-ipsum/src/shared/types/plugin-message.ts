@@ -1,18 +1,26 @@
 import type { GenerateFormState } from './generate-form';
 
-export type FigmaPluginMessageType = 'ON_CHANGE_SELECTION';
+export type FigmaPluginMessageType = 'ON_INIT' | 'ON_CHANGE_SELECTION';
 
 /**
  * PluginMessage for figma(sandbox) → ui(ifra
  */
-export interface FigmaPluginMessage {
-  type: 'ON_CHANGE_SELECTION';
-  isSelectedTextNode: boolean;
-}
+export type FigmaPluginMessage =
+  | {
+      type: 'ON_INIT';
+      isSelectedTextNode: boolean;
+      formState: GenerateFormState;
+    }
+  | {
+      type: 'ON_CHANGE_SELECTION';
+      isSelectedTextNode: boolean;
+    };
 
-export type UIPluginMessageType = 'ON_CHANGE_FORM_STATE';
+export type UIPluginMessageType = 'INIT' | 'ON_CHANGE_FORM_STATE';
 
-export interface UIPluginMessage {
-  type: 'ON_CHANGE_FORM_STATE';
-  formState: GenerateFormState;
-}
+export type UIPluginMessage =
+  | { type: 'INIT' }
+  | {
+      type: 'ON_CHANGE_FORM_STATE';
+      formState: GenerateFormState;
+    };
