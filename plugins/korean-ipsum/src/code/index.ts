@@ -1,6 +1,6 @@
 import manifest from 'manifest.json';
-import { postFigmaPluginMessage } from './utils/plugin-message';
-import { isTextNode } from './utils/check-node';
+import type { UIPluginMessage } from '@/shared/types';
+import { messageEventHandler, selectionChangeHandler } from './handlers';
 
 figma.showUI(__html__, {
   title: manifest.name,
@@ -9,9 +9,10 @@ figma.showUI(__html__, {
   height: 432,
 });
 
-figma.on('selectionchange', () => {
-  postFigmaPluginMessage({
-    type: 'ON_CHANGE_SELECTION',
-    isSelectedTextNode: figma.currentPage.selection.some(isTextNode),
+figma.on('selectionchange', selectionChangeHandler);
+
+figma.ui.onmessage = (pluginMessage: UIPluginMessage) => {
+  messageEventHandler(pluginMessage).catch(() => {
+    /**TODO: Add Error Handling */
   });
-});
+};
