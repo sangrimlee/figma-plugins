@@ -7,6 +7,7 @@ import type {
 } from '@/shared/types';
 import { useGlobalStore } from '../store';
 import { RadioGroupField, SelectField } from '../components';
+import { postUIPluginMessage } from '../utils/plugin-message';
 
 const GENERATE_SOURCES = [
   { value: 'countingStars', label: '별 헤는 밤' },
@@ -38,12 +39,22 @@ export function FormPage() {
   const formState = useGlobalStore((state) => state.formState);
   const updateForm = useGlobalStore((state) => state.updateForm);
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    postUIPluginMessage({
+      type: 'GENERATE_CONTENT',
+      formState,
+    });
+  };
+
   return (
     <Flex
-      css={{ padding: '$400', height: '100vh' }}
+      as="form"
+      css={{ height: '100vh', margin: 0, padding: '$400' }}
       direction="column"
       gap="600"
       justify="between"
+      onSubmit={handleSubmit}
     >
       <Flex direction="column" gap="700">
         <SelectField
@@ -79,7 +90,7 @@ export function FormPage() {
           value={formState.method}
         />
       </Flex>
-      <Button size="sm" type="button">
+      <Button size="sm" type="submit">
         생성
       </Button>
     </Flex>
