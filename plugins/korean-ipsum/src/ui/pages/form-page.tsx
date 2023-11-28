@@ -7,6 +7,7 @@ import type {
 } from '@/shared/types';
 import { useGlobalStore } from '../store';
 import { RadioGroupField, SelectField } from '../components';
+import { useGenerateContentEvent } from '../hooks';
 
 const GENERATE_SOURCES = [
   { value: 'countingStars', label: '별 헤는 밤' },
@@ -37,13 +38,21 @@ const GENERATE_METHODS = [
 export function FormPage() {
   const formState = useGlobalStore((state) => state.formState);
   const updateForm = useGlobalStore((state) => state.updateForm);
+  const { isLoading, postGenerateContentEvent } = useGenerateContentEvent();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    postGenerateContentEvent(formState);
+  };
 
   return (
     <Flex
-      css={{ padding: '$400', height: '100vh' }}
+      as="form"
+      css={{ height: '100vh', margin: 0, padding: '$400' }}
       direction="column"
       gap="600"
       justify="between"
+      onSubmit={handleSubmit}
     >
       <Flex direction="column" gap="700">
         <SelectField
@@ -79,8 +88,8 @@ export function FormPage() {
           value={formState.method}
         />
       </Flex>
-      <Button size="sm" type="button">
-        생성
+      <Button disabled={isLoading} size="sm" type="submit">
+        <span>생성</span>
       </Button>
     </Flex>
   );
