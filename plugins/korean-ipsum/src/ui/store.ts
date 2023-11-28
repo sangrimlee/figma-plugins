@@ -14,6 +14,7 @@ interface GlobalStoreAction {
     key: K,
     value: GenerateFormState[K],
   ) => void;
+  resetForm: (formState?: GenerateFormState) => void;
 }
 
 const initialState: GlobalStoreState = {
@@ -38,6 +39,14 @@ export const useGlobalStore = create(
         formState: {
           ...prevState.formState,
           [key]: value,
+        },
+      }));
+    },
+    resetForm: (formState) => {
+      set(() => ({
+        formState: {
+          ...initialState.formState,
+          ...formState,
         },
       }));
     },
