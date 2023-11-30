@@ -5,9 +5,8 @@ import type {
   GenerateUnit,
 } from '@/shared/types';
 import { useGlobalStore } from '../store';
-import { RadioGroupField, SelectField } from '../components';
+import { RadioGroupField, SelectField, RangeField } from '../components';
 import { useGenerateContentEvent } from '../hooks';
-import { RangeField } from '../components/range-field';
 
 const GENERATE_SOURCES = [
   { value: 'countingStars', label: '별 헤는 밤' },
