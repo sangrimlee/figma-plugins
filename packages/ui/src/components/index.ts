@@ -20,3 +20,4 @@ export { Text, type TextVariantProps } from './text';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 export { Toast, type ToastProps } from './toast';
 export { Toaster, useToast } from './toaster';
+export { Slider } from './slider';
