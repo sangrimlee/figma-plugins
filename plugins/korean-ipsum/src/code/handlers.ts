@@ -41,7 +41,7 @@ function getFormStateFromClientStorage(): Promise<GenerateFormState> {
   return getClientStorage('FORM_STATE', {
     source: 'countingStars',
     unit: 'word',
-    count: '1',
+    count: 1,
     method: 'replace',
   });
 }
