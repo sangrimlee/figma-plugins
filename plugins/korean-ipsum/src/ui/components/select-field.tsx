@@ -32,7 +32,7 @@ export function SelectField({ label, options, ...props }: SelectFieldProps) {
         <SelectTrigger id={id}>
           <SelectValue placeholder="텍스트 소스를 선택해주세요." />
         </SelectTrigger>
-        <SelectContent position="popper">
+        <SelectContent>
           {options.map((option) => (
             <SelectItem key={option.value} value={option.value}>
               {option.label}
