@@ -52,7 +52,11 @@ export function generateBySize(
   let currentIndex = 0;
   for (let line = 0; line < maxLine; line++) {
     let currentWidth = 0;
-    while (currentWidth < width) {
+    while (
+      currentWidth +
+        getCharacterWidth(dataSource[currentIndex], characterSize) <
+      width
+    ) {
       const character = dataSource[currentIndex];
       content += character;
       currentWidth += getCharacterWidth(character, characterSize);
@@ -60,5 +64,5 @@ export function generateBySize(
       currentIndex %= dataSource.length;
     }
   }
-  return content.slice(0, -maxLine);
+  return content;
 }
