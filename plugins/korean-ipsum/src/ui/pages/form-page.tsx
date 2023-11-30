@@ -16,7 +16,7 @@ const GENERATE_SOURCES = [
   { value: 'star', label: '별' },
 ];
 
-const GENREATE_UNITS = [
+const GENERATE_UNITS = [
   { value: 'word', label: '단어' },
   { value: 'sentence', label: '문장' },
   { value: 'paragraph', label: '문단' },
@@ -63,12 +63,12 @@ export function FormPage() {
           options={GENERATE_SOURCES}
           value={formState.source}
         />
-        <RadioGroupField
+        <SelectField
           label="생성 단위"
           onValueChange={(value) => {
             updateForm('unit', value as GenerateUnit);
           }}
-          options={GENREATE_UNITS}
+          options={GENERATE_UNITS}
           value={formState.unit}
         />
         <RadioGroupField
