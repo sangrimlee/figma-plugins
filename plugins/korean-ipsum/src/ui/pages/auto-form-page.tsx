@@ -39,7 +39,7 @@ export function AutoFormPage() {
           </Text>
           <NodeBadge nodeType="text" />
           <Text as="span" size="sm">
-            에 알맞은 텍스트를 생성합니다.
+            크기에 알맞은 텍스트를 생성합니다.
           </Text>
         </Flex>
       </Flex>
