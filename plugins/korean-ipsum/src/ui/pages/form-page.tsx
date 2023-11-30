@@ -28,11 +28,10 @@ export function FormPage() {
       as="form"
       css={{ height: '$full', margin: 0, padding: '$200 $400 $400' }}
       direction="column"
-      gap="500"
       justify="between"
       onSubmit={handleSubmit}
     >
-      <Flex direction="column" gap="700">
+      <Flex direction="column" gap="600">
         <SelectField
           label="텍스트 소스"
           onValueChange={(value) => {

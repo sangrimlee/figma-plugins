@@ -8,6 +8,7 @@ import {
 import { useState } from 'react';
 import { MagicWandIcon, TextIcon } from '@radix-ui/react-icons';
 import { FormPage } from './form-page';
+import { AutoFormPage } from './auto-form-page';
 
 export function TabsPage() {
   const [tab, setTab] = useState<string>('manual');
@@ -27,6 +28,9 @@ export function TabsPage() {
         </TabsList>
         <TabsContent value="manual">
           <FormPage />
+        </TabsContent>
+        <TabsContent value="auto">
+          <AutoFormPage />
         </TabsContent>
       </Tabs>
     </Flex>
