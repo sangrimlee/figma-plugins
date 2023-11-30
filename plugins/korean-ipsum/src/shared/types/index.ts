@@ -1,2 +1,3 @@
-export * from './generate-form';
+export * from './generate';
 export * from './plugin-message';
+export * from './size';

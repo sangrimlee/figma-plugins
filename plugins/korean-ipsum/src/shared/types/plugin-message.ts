@@ -1,4 +1,4 @@
-import type { GenerateFormState, GenerateSource } from './generate-form';
+import type { GenerateFormState, GenerateSource } from './generate';
 
 export type FigmaPluginMessageType =
   | 'ON_INIT'
