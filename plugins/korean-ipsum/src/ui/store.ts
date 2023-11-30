@@ -22,7 +22,7 @@ const initialState: GlobalStoreState = {
   formState: {
     source: 'countingStars',
     unit: 'word',
-    count: '1',
+    count: 1,
     method: 'replace',
   },
 };

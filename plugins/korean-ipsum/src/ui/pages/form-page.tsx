@@ -1,12 +1,11 @@
 import { Button, Flex } from '@figma-plugins/ui';
 import type {
-  GenerateCount,
   GenerateMethod,
   GenerateSource,
   GenerateUnit,
 } from '@/shared/types';
 import { useGlobalStore } from '../store';
-import { RadioGroupField, SelectField } from '../components';
+import { RadioGroupField, SelectField, RangeField } from '../components';
 import { useGenerateContentEvent } from '../hooks';
 
 const GENERATE_SOURCES = [
@@ -16,18 +15,10 @@ const GENERATE_SOURCES = [
   { value: 'star', label: '별' },
 ];
 
-const GENREATE_UNITS = [
+const GENERATE_UNITS = [
   { value: 'word', label: '단어' },
   { value: 'sentence', label: '문장' },
   { value: 'paragraph', label: '문단' },
-];
-
-const GENERATE_COUNTS = [
-  { value: '1', label: '1개' },
-  { value: '2', label: '2개' },
-  { value: '3', label: '3개' },
-  { value: '4', label: '4개' },
-  { value: '5', label: '5개' },
 ];
 
 const GENERATE_METHODS = [
@@ -50,7 +41,7 @@ export function FormPage() {
       as="form"
       css={{ height: '100vh', margin: 0, padding: '$400' }}
       direction="column"
-      gap="600"
+      gap="500"
       justify="between"
       onSubmit={handleSubmit}
     >
@@ -63,21 +54,23 @@ export function FormPage() {
           options={GENERATE_SOURCES}
           value={formState.source}
         />
-        <RadioGroupField
+        <SelectField
           label="생성 단위"
           onValueChange={(value) => {
             updateForm('unit', value as GenerateUnit);
           }}
-          options={GENREATE_UNITS}
+          options={GENERATE_UNITS}
           value={formState.unit}
         />
-        <RadioGroupField
+        <RangeField
+          defaultValue={[formState.count]}
           label="생성 개수"
-          onValueChange={(value) => {
-            updateForm('count', value as GenerateCount);
+          max={10}
+          min={1}
+          onValueChange={([value]) => {
+            updateForm('count', value);
           }}
-          options={GENERATE_COUNTS}
-          value={formState.count}
+          value={[formState.count]}
         />
         <RadioGroupField
           label="생성 방식"

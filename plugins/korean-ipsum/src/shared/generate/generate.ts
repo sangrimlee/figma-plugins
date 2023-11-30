@@ -21,13 +21,7 @@ export function generatePragraph(source: string, count: number) {
   return createContent(count, () => generateSentence(source, 8), '\n\n');
 }
 
-export function generateContent({
-  unit,
-  count: countStr,
-  source,
-}: GenerateFormState) {
-  const count = parseInt(countStr, 10);
-
+export function generateContent({ unit, count, source }: GenerateFormState) {
   const dataSource = data[source];
   if (unit === 'word') {
     return generateWord(dataSource, count);
