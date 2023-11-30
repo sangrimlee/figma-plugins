@@ -5,13 +5,14 @@ import {
   TabsList,
   TabsTrigger,
 } from '@figma-plugins/ui';
-import { useState } from 'react';
 import { MagicWandIcon, TextIcon } from '@radix-ui/react-icons';
+import { useGlobalStore } from '../store';
 import { FormPage } from './form-page';
 import { AutoFormPage } from './auto-form-page';
 
 export function TabsPage() {
-  const [tab, setTab] = useState<string>('manual');
+  const tab = useGlobalStore((state) => state.tab);
+  const setTab = useGlobalStore((state) => state.setTab);
 
   return (
     <Flex as="main" css={{ height: '100vh' }} direction="column">

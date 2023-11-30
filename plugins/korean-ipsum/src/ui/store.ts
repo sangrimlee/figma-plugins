@@ -4,11 +4,13 @@ import type { GenerateFormState } from '@/shared/types';
 import { postUIPluginMessage } from './utils/plugin-message';
 
 interface GlobalStoreState {
+  tab: string;
   isSelectedTextNode: boolean;
   formState: GenerateFormState;
 }
 
 interface GlobalStoreAction {
+  setTab: (tab: string) => void;
   updateIsSelectedTextNode: (isSelectedNode: boolean) => void;
   updateForm: <K extends keyof GenerateFormState>(
     key: K,
@@ -18,6 +20,7 @@ interface GlobalStoreAction {
 }
 
 const initialState: GlobalStoreState = {
+  tab: 'manual',
   isSelectedTextNode: false,
   formState: {
     source: 'countingStars',
@@ -30,6 +33,9 @@ const initialState: GlobalStoreState = {
 export const useGlobalStore = create(
   subscribeWithSelector<GlobalStoreState & GlobalStoreAction>((set) => ({
     ...initialState,
+    setTab: (tab) => {
+      set({ tab });
+    },
     updateIsSelectedTextNode: (isSelectedTextNode) => {
       set(() => ({ isSelectedTextNode }));
     },
