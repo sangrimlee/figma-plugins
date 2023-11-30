@@ -1,1 +1,1 @@
-export { generateContent } from './generate';
+export { generateByForm, generateBySize } from './generate';

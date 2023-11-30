@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import type { GenerateFormState } from '@/shared/types';
+import type { GenerateFormState, GenerateSource } from '@/shared/types';
 import { postUIPluginMessage } from '../utils/plugin-message';
 import {
   useMessageEventListener,
@@ -9,16 +9,21 @@ import {
 export function useGenerateContentEvent() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const postGenerateContentEvent = useCallback(
-    (formState: GenerateFormState) => {
-      setIsLoading(true);
-      postUIPluginMessage({
-        type: 'GENERATE_CONTENT',
-        formState,
-      });
-    },
-    [],
-  );
+  const generate = useCallback((formState: GenerateFormState) => {
+    setIsLoading(true);
+    postUIPluginMessage({
+      type: 'GENERATE_CONTENT',
+      formState,
+    });
+  }, []);
+
+  const autoGenerate = useCallback((source: GenerateSource) => {
+    setIsLoading(true);
+    postUIPluginMessage({
+      type: 'AUTO_GENERATE_CONTENT',
+      source,
+    });
+  }, []);
 
   const handleGenerateContentEvent = useCallback<PluginMessageEventHandler>(
     ({ data: { pluginMessage } }) => {
@@ -32,5 +37,5 @@ export function useGenerateContentEvent() {
 
   useMessageEventListener(handleGenerateContentEvent);
 
-  return { isLoading, postGenerateContentEvent };
+  return { isLoading, generate, autoGenerate };
 }

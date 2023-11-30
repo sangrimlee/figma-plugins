@@ -6,7 +6,7 @@ figma.showUI(__html__, {
   title: manifest.name,
   themeColors: true,
   width: 384,
-  height: 432,
+  height: 496,
 });
 
 figma.on('selectionchange', selectionChangeHandler);
