@@ -39,7 +39,7 @@ export function FormPage() {
   return (
     <Flex
       as="form"
-      css={{ height: '100vh', margin: 0, padding: '$400' }}
+      css={{ height: '$full', margin: 0, padding: '$200 $400 $400' }}
       direction="column"
       gap="500"
       justify="between"

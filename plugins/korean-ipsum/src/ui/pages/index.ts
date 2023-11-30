@@ -1,2 +1,3 @@
-export { FormPage } from './form-page';
-export { MainPage } from './main-page';
+export { EmptyPage } from './empty-page';
+export { LoadingPage } from './loading-page';
+export { TabsPage } from './tabs-page';

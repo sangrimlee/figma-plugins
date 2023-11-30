@@ -1,28 +1,17 @@
-import { Flex, Loader, colors, globalStyles } from '@figma-plugins/ui';
-import { FormPage, MainPage } from './pages';
-import { useInitEvent, useSelectionChangeEvent } from './hooks';
+import { globalStyles } from '@figma-plugins/ui';
 import { useGlobalStore } from './store';
+import { useInitEvent, useSelectionChangeEvent } from './hooks';
+import { EmptyPage, LoadingPage, TabsPage } from './pages';
 
 export function App() {
   const isLoading = useInitEvent();
-  const isSelectedTextNode = useGlobalStore(
-    (state) => state.isSelectedTextNode,
-  );
-
+  const isSelected = useGlobalStore((state) => state.isSelectedTextNode);
   globalStyles();
   useSelectionChangeEvent();
 
   if (isLoading) {
-    return (
-      <Flex
-        css={{ height: '100vh', color: colors.icon.secondary.default }}
-        items="center"
-        justify="center"
-      >
-        <Loader animate height="24" width="24" />
-      </Flex>
-    );
+    return <LoadingPage />;
   }
 
-  return <>{isSelectedTextNode ? <FormPage /> : <MainPage />}</>;
+  return isSelected ? <TabsPage /> : <EmptyPage />;
 }
