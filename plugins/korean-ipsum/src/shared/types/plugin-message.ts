@@ -1,4 +1,4 @@
-import type { GenerateFormState } from './generate-form';
+import type { GenerateFormState, GenerateSource } from './generate-form';
 
 export type FigmaPluginMessageType =
   | 'ON_INIT'
@@ -25,7 +25,8 @@ export type FigmaPluginMessage =
 export type UIPluginMessageType =
   | 'INIT'
   | 'ON_CHANGE_FORM_STATE'
-  | 'GENERATE_CONTENT';
+  | 'GENERATE_CONTENT'
+  | 'AUTO_GENERATE_CONTENT';
 
 export type UIPluginMessage =
   | { type: 'INIT' }
@@ -36,4 +37,8 @@ export type UIPluginMessage =
   | {
       type: 'GENERATE_CONTENT';
       formState: GenerateFormState;
+    }
+  | {
+      type: 'AUTO_GENERATE_CONTENT';
+      source: GenerateSource;
     };

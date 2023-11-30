@@ -16,11 +16,11 @@ import {
 export function FormPage() {
   const formState = useGlobalStore((state) => state.formState);
   const updateForm = useGlobalStore((state) => state.updateForm);
-  const { isLoading, postGenerateContentEvent } = useGenerateContentEvent();
+  const { isLoading, generate } = useGenerateContentEvent();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    postGenerateContentEvent(formState);
+    generate(formState);
   };
 
   return (

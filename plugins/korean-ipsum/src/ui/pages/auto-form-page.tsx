@@ -3,13 +3,16 @@ import type { GenerateSource } from '@/shared/types';
 import { useGlobalStore } from '../store';
 import { SelectField } from '../components';
 import { GENERATE_SOURCES } from '../constants';
+import { useGenerateContentEvent } from '../hooks';
 
 export function AutoFormPage() {
   const formState = useGlobalStore((state) => state.formState);
   const updateForm = useGlobalStore((state) => state.updateForm);
+  const { isLoading, autoGenerate } = useGenerateContentEvent();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    autoGenerate(formState.source);
   };
 
   return (
@@ -40,7 +43,7 @@ export function AutoFormPage() {
           </Text>
         </Flex>
       </Flex>
-      <Button size="sm" type="submit">
+      <Button disabled={isLoading} size="sm" type="submit">
         <span>생성</span>
       </Button>
     </Flex>
