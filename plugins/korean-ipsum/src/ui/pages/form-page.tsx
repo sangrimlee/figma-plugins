@@ -1,6 +1,5 @@
 import { Button, Flex } from '@figma-plugins/ui';
 import type {
-  GenerateCount,
   GenerateMethod,
   GenerateSource,
   GenerateUnit,
@@ -8,6 +7,7 @@ import type {
 import { useGlobalStore } from '../store';
 import { RadioGroupField, SelectField } from '../components';
 import { useGenerateContentEvent } from '../hooks';
+import { RangeField } from '../components/range-field';
 
 const GENERATE_SOURCES = [
   { value: 'countingStars', label: '별 헤는 밤' },
@@ -20,14 +20,6 @@ const GENERATE_UNITS = [
   { value: 'word', label: '단어' },
   { value: 'sentence', label: '문장' },
   { value: 'paragraph', label: '문단' },
-];
-
-const GENERATE_COUNTS = [
-  { value: '1', label: '1개' },
-  { value: '2', label: '2개' },
-  { value: '3', label: '3개' },
-  { value: '4', label: '4개' },
-  { value: '5', label: '5개' },
 ];
 
 const GENERATE_METHODS = [
@@ -50,7 +42,7 @@ export function FormPage() {
       as="form"
       css={{ height: '100vh', margin: 0, padding: '$400' }}
       direction="column"
-      gap="600"
+      gap="500"
       justify="between"
       onSubmit={handleSubmit}
     >
@@ -71,13 +63,15 @@ export function FormPage() {
           options={GENERATE_UNITS}
           value={formState.unit}
         />
-        <RadioGroupField
+        <RangeField
+          defaultValue={[formState.count]}
           label="생성 개수"
-          onValueChange={(value) => {
-            updateForm('count', value as GenerateCount);
+          max={10}
+          min={1}
+          onValueChange={([value]) => {
+            updateForm('count', value);
           }}
-          options={GENERATE_COUNTS}
-          value={formState.count}
+          value={[formState.count]}
         />
         <RadioGroupField
           label="생성 방식"
