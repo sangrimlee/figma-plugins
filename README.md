@@ -7,9 +7,10 @@
 
 ## Plugins
 
-| 이름                                                      | 설명                 |                                  링크                                  |
-| :-------------------------------------------------------- | :------------------- | :--------------------------------------------------------------------: |
-| [한글맞춤](./plugins/figma-hangeul-spell-check/README.md) | 한국어 맞춤법 검사기 | [Figma ↗](https://www.figma.com/community/plugin/1233034736208451985) |
+| 이름                                               | 설명                  |                                  링크                                  |
+| :------------------------------------------------- | :-------------------- | :--------------------------------------------------------------------: |
+| [한글맞춤](./plugins/korean-spell-check/README.md) | 한글 맞춤법 검사      | [Figma ↗](https://www.figma.com/community/plugin/1233034736208451985) |
+| [한글입숨](./plugins/korean-ipsum/README.md)       | 한글 예시 텍스트 생성 | [Figma ↗](https://www.figma.com/community/plugin/1218854890608417355) |
 
 ## Internal Packages
 
