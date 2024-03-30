@@ -1,13 +1,17 @@
 import Fastify from 'fastify';
+import { fastifyEnv } from '@fastify/env';
+import { envOptions } from './config/env';
 
-export const createServer = () => {
-  const fastify = Fastify({
+export const startServer = async () => {
+  const server = Fastify({
     logger: true,
   });
 
-  fastify.get('/', () => {
-    return 'Figma Plugins';
-  });
+  await server.register(fastifyEnv, envOptions);
 
-  return fastify;
+  server.get('/', () => 'Figma Plugins');
+
+  await server.listen({
+    port: server.config.API_PORT,
+  });
 };

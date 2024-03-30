@@ -1,8 +1,7 @@
-import { createServer } from './server';
+import { startServer } from './server';
 
-const server = createServer();
-
-server.listen().catch((err) => {
-  server.log.error(err);
+startServer().catch((err) => {
+  // eslint-disable-next-line no-console -- log error
+  console.error(err);
   process.exit(1);
 });
