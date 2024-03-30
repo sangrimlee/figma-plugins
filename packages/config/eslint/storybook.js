@@ -13,7 +13,6 @@ const config = {
       '@vercel/style-guide/eslint/browser',
       '@vercel/style-guide/eslint/react',
       'eslint-config-turbo',
-      'eslint-config-prettier',
     ].map(require.resolve),
   ],
   parserOptions: {
@@ -33,9 +32,8 @@ const config = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/no-default-export': 'off',
-    'import/no-extraneous-dependencies': ['error', { includeTypes: true }],
   },
-  ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.cjs'],
+  ignorePatterns: ['node_modules', 'dist', '.eslintrc.cjs', '*.config.*'],
 };
 
 module.exports = config;
