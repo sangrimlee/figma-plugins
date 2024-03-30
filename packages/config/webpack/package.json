@@ -7,8 +7,9 @@
   "types": "./src/index.d.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint src",
-    "lint:fix": "pnpm lint --fix"
+    "lint": "eslint src --fix",
+    "lint:check": "eslint src --max-warnings=0",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "html-inline-script-webpack-plugin": "^3.2.1",

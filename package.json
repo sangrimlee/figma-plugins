@@ -13,7 +13,7 @@
     "format:check": "prettier -c --cache .",
     "gen:plugin": "turbo gen plugin",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint:check": "turbo run lint:check",
     "typecheck": "turbo run typecheck"
   },
   "prettier": "@vercel/style-guide/prettier",
@@ -26,8 +26,8 @@
     "prettier": "^3.0.3",
     "turbo": "^1.10.16"
   },
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@8.15.5",
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   }
 }
