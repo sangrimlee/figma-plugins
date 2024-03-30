@@ -5,22 +5,12 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 /** @type {import('eslint').Linter.Config} */
 const config = {
   extends: [
-    'plugin:storybook/recommended',
-    'plugin:mdx/recommended',
-    ...[
-      '@vercel/style-guide/eslint/node',
-      '@vercel/style-guide/eslint/typescript',
-      '@vercel/style-guide/eslint/browser',
-      '@vercel/style-guide/eslint/react',
-      'eslint-config-turbo',
-    ].map(require.resolve),
-  ],
+    '@vercel/style-guide/eslint/node',
+    '@vercel/style-guide/eslint/typescript',
+    'eslint-config-turbo',
+  ].map(require.resolve),
   parserOptions: {
     project,
-  },
-  globals: {
-    React: true,
-    JSX: true,
   },
   settings: {
     'import/resolver': {
@@ -29,9 +19,14 @@ const config = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: [require.resolve('@vercel/style-guide/eslint/jest')],
+    },
+  ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/no-default-export': 'off',
   },
   ignorePatterns: ['node_modules', 'dist', '.eslintrc.cjs', '*.config.*'],
 };

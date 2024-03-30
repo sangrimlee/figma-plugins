@@ -9,12 +9,12 @@ const config = {
     '@vercel/style-guide/eslint/typescript',
     '@vercel/style-guide/eslint/react',
     'eslint-config-turbo',
-    'eslint-config-prettier',
   ].map(require.resolve),
   parserOptions: {
     project,
   },
   globals: {
+    React: true,
     JSX: true,
   },
   settings: {
@@ -26,9 +26,8 @@ const config = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/no-extraneous-dependencies': ['error', { includeTypes: true }],
   },
-  ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.cjs', '*.config.js'],
+  ignorePatterns: ['node_modules', 'dist', '.eslintrc.cjs', '*.config.*'],
 };
 
 module.exports = config;

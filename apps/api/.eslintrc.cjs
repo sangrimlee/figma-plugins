@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@figma-plugins/eslint-config'],
+  extends: ['@figma-plugins/eslint-config/server'],
 };
