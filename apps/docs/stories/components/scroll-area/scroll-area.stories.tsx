@@ -24,7 +24,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const TAGS = Array.from({ length: 32 }).map(
-  (_, i, a) => `v1.2.0-beta.${a.length - i}`,
+  (_, i, a) => `v1.2.0-beta.${(a.length - i).toString()}`,
 );
 
 export const Default: Story = {
