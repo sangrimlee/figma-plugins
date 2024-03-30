@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["CI", "NODE_ENV"],
+  "globalEnv": ["CI", "NODE_ENV", "API_PORT", "API_SECRET_KEY"],
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
