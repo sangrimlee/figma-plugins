@@ -1,0 +1,28 @@
+{
+  "name": "@figma-plugins/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo dist node_modules",
+    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "pnpm lint --fix",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/env": "^4.3.0",
+    "fastify": "^4.26.2",
+    "pino": "^8.19.0",
+    "pino-pretty": "^11.0.0"
+  },
+  "devDependencies": {
+    "@figma-plugins/eslint-config": "workspace:*",
+    "@figma-plugins/tsconfig": "workspace:*",
+    "@types/node": "^20.8.9",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
