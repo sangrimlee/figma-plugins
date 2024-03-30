@@ -1,7 +1,7 @@
 import { startServer } from './server';
+import { logger } from './config/logger';
 
 startServer().catch((err) => {
-  // eslint-disable-next-line no-console -- log error
-  console.error(err);
+  logger.error(err);
   process.exit(1);
 });

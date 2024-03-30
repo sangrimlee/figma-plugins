@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@fastify/env": "^4.3.0",
-    "fastify": "^4.26.2"
+    "fastify": "^4.26.2",
+    "pino": "^8.19.0",
+    "pino-pretty": "^11.0.0"
   },
   "devDependencies": {
     "@figma-plugins/eslint-config": "workspace:*",
