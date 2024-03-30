@@ -7,8 +7,8 @@
     "build": "storybook build --docs",
     "clean": "rm -rf .turbo storybook-static node_modules",
     "dev": "storybook dev -p 6006 --no-open",
-    "lint": "eslint '{.storybook,stories}/**/*.{ts,tsx}'",
-    "lint:fix": "pnpm lint --fix",
+    "lint": "eslint '{.storybook,stories}/**/*.{ts,tsx}' --fix",
+    "lint:check": "eslint '{.storybook,stories}/**/*.{ts,tsx}' --max-warnings=0",
     "start": "http-server storybook-static",
     "typecheck": "tsc --noEmit"
   },

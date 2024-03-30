@@ -13,7 +13,7 @@
     "format:check": "prettier -c --cache .",
     "gen:plugin": "turbo gen plugin",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint:check": "turbo run lint:check",
     "typecheck": "turbo run typecheck"
   },
   "prettier": "@vercel/style-guide/prettier",

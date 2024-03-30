@@ -18,7 +18,7 @@
     "lint": {
       "cache": true
     },
-    "lint:fix": {
+    "lint:check": {
       "cache": true
     },
     "typecheck": {

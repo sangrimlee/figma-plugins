@@ -6,8 +6,8 @@
     "build": "webpack",
     "clean": "rm -rf .turbo dist node_modules",
     "dev": "webpack --watch",
-    "lint": "eslint ./src/**/*.ts*",
-    "lint:fix": "pnpm lint --fix",
+    "lint": "eslint ./src/**/*.ts* --fix",
+    "lint:check": "eslint ./src/**/*.ts* --max-warnings=0",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
