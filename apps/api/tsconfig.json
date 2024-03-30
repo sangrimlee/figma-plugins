@@ -1,0 +1,9 @@
+{
+  "extends": "@figma-plugins/tsconfig/base.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
