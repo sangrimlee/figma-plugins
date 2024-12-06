@@ -20,6 +20,7 @@
   "devDependencies": {
     "@figma-plugins/eslint-config": "workspace:*",
     "@figma-plugins/tsconfig": "workspace:*",
+    "typescript": "^5.2.2",
     "webpack": "^5.89.0"
   },
   "peerDependencies": {
