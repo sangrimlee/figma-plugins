@@ -1,9 +1,8 @@
 import type { SpellCheckReason, SpellCheckResult } from '@/shared/types';
 import { decodeHtml } from '@/ui/utils/decode-html';
 
-const ORIGIN_REGEX = /<span (?:[^<>/]+)>(?<origin>[^<>/]+)<\/span>/g;
-const CORRECT_REGEX =
-  /<em class='(?<reason>[^<>/]+)'>(?<correct>[^<>/]+)<\/em>/g;
+const ORIGIN_REGEX = /<span (?:[^<>/]+)>(?:[^<>/]+)<\/span>/g;
+const CORRECT_REGEX = /<em class='(?:[^<>/]+)'>(?:[^<>/]+)<\/em>/g;
 
 export function getSpellCheckeResult(
   originHtml: string,

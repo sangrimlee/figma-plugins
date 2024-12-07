@@ -49,7 +49,7 @@ export async function requestPassportKey() {
   });
 
   const html = await res.text();
-  const matched = /passportKey=(?<passportkey>[a-zA-Z0-9]+)/.exec(html);
+  const matched = /passportKey=(?:[a-zA-Z0-9]+)/.exec(html);
   if (!matched) {
     throw new Error('FIND_PASSPORT_KEY_FAILED');
   }
