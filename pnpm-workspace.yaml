@@ -3,3 +3,25 @@ packages:
   - 'packages/*'
   - 'packages/config/*'
   - 'plugins/*'
+
+catalog:
+  '@figma/plugin-typings': ^1.104.0
+  '@types/node': ^20.17.9
+  eslint: 8.57.1
+  prettier: 3.4.2
+  tsup: 7.2.0
+  typescript: 5.7.2
+  webpack: 5.97.1
+  webpack-cli: 5.1.4
+
+catalogs:
+  react18:
+    react: 18.3.1
+    react-dom: 18.3.1
+    '@types/react': ^18.3.12
+    '@types/react-dom': ^18.3.1
+
+  turbo:
+    turbo: 2.3.3
+    '@turbo/gen': 2.3.3
+    eslint-config-turbo: 2.3.3
