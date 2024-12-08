@@ -9,19 +9,19 @@
     "build": "turbo run build",
     "clean:workspace": "turbo run clean",
     "dev": "turbo run dev",
-    "format": "prettier -w --cache .",
-    "format:check": "prettier -c --cache .",
+    "format": "turbo run format -- --write --cache",
+    "format:check": "turbo run format -- --cache",
     "gen:plugin": "turbo gen plugin",
     "lint": "turbo run lint",
     "lint:check": "turbo run lint:check",
     "typecheck": "turbo run typecheck"
   },
-  "prettier": "@vercel/style-guide/prettier",
+  "prettier": "@figma-plugins/prettier-config",
   "devDependencies": {
     "@figma-plugins/eslint-config": "workspace:*",
+    "@figma-plugins/prettier-config": "workspace:*",
     "@figma-plugins/tsconfig": "workspace:*",
     "@turbo/gen": "catalog:turbo",
-    "@vercel/style-guide": "^6.0.0",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "turbo": "catalog:turbo"
