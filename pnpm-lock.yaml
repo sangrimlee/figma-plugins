@@ -61,15 +61,15 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:packages/config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:packages/config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:packages/config/tsconfig
       '@turbo/gen':
         specifier: catalog:turbo
         version: 2.3.3(@types/node@20.17.9)(typescript@5.7.2)
-      '@vercel/style-guide':
-        specifier: ^6.0.0
-        version: 6.0.0(eslint@8.57.1)(prettier@3.4.2)(typescript@5.7.2)
       eslint:
         specifier: 'catalog:'
         version: 8.57.1
@@ -98,6 +98,9 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:../../packages/config/tsconfig
@@ -129,6 +132,9 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:../../packages/config/tsconfig
@@ -202,6 +208,9 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1(eslint@8.57.1)(typescript@5.7.2)
     devDependencies:
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.12
@@ -278,6 +287,9 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:../config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:../config/tsconfig
@@ -324,6 +336,9 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:../../packages/config/tsconfig
@@ -373,6 +388,9 @@ importers:
       '@figma-plugins/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config/eslint
+      '@figma-plugins/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/config/prettier
       '@figma-plugins/tsconfig':
         specifier: workspace:*
         version: link:../../packages/config/tsconfig

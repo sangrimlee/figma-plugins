@@ -16,6 +16,10 @@
       "cache": false,
       "persistent": true
     },
+    "format": {
+      "cache": true,
+      "outputLogs": "new-only"
+    },
     "lint": {
       "cache": true
     },
