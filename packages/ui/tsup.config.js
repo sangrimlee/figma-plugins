@@ -4,7 +4,7 @@ import pkg from './package.json';
 export default defineConfig((options) => ({
   entry: ['./src/index.ts'],
   target: 'es6',
-  format: ['esm', 'cjs'],
+  format: ['esm'],
   splitting: true,
   treeshake: true,
   sourcemap: true,
