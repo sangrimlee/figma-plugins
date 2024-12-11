@@ -1,10 +1,13 @@
-const path = require('node:path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
+import path from 'node:path';
+import module from 'node:module';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlInlineScriptPlugin from 'html-inline-script-webpack-plugin';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 
-const webpackConfig = ({
+const require = module.createRequire(import.meta.url);
+
+export const figmaPluginConfig = ({
   ui = 'src/ui/index.tsx',
   html = 'src/ui/index.html',
   code = 'src/code/index.ts',
@@ -60,5 +63,3 @@ const webpackConfig = ({
     ],
   };
 };
-
-module.exports = webpackConfig;

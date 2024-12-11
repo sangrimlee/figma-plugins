@@ -23,6 +23,4 @@ export interface Options {
   plugins?: Configuration['plugins'];
 }
 
-declare function webpackConfig(options?: Options): Configuration;
-
-export = webpackConfig;
+export declare function figmaPluginConfig(options?: Options): Configuration;

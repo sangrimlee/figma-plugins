@@ -2,6 +2,7 @@
   "name": "korean-spell-check",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "webpack",
     "clean": "rm -rf .turbo dist node_modules",
