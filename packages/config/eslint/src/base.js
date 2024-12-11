@@ -1,4 +1,4 @@
-import path from 'node:path';
+import * as path from 'node:path';
 import { includeIgnoreFile } from '@eslint/compat';
 import importPlugin from 'eslint-plugin-import';
 import turboPlugin from 'eslint-plugin-turbo';
