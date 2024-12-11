@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@figma-plugins/prettier-config": "workspace:*",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "typescript": "catalog:"
   },
   "peerDependencies": {
