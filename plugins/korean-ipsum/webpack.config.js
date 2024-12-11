@@ -1,3 +1,3 @@
-const webpackConfig = require('@figma-plugins/webpack-config');
+import { figmaPluginConfig } from '@figma-plugins/webpack-config';
 
-module.exports = webpackConfig();
+export default figmaPluginConfig({});

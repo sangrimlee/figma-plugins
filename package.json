@@ -5,6 +5,7 @@
     "name": "sangrimlee",
     "email": "contact@sangrim.dev"
   },
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "clean:workspace": "turbo run clean",
