@@ -7,7 +7,7 @@ packages:
 catalog:
   '@figma/plugin-typings': ^1.104.0
   '@types/node': ^20.17.9
-  eslint: 8.57.1
+  eslint: 9.16.0
   prettier: 3.4.2
   tsup: 7.2.0
   typescript: 5.7.2
@@ -24,4 +24,4 @@ catalogs:
   turbo:
     turbo: 2.3.3
     '@turbo/gen': 2.3.3
-    eslint-config-turbo: 2.3.3
+    eslint-plugin-turbo: 2.3.3
