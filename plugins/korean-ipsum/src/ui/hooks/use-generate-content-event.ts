@@ -1,11 +1,8 @@
 import { useCallback, useState } from 'react';
 import type { GenerateFormState, GenerateSource } from '@/shared/types';
 import { postUIPluginMessage } from '../utils/plugin-message';
-import {
-  useMessageEventListener
-  
-} from './use-message-event-listner';
-import type {PluginMessageEventHandler} from './use-message-event-listner';
+import { useMessageEventListener } from './use-message-event-listner';
+import type { PluginMessageEventHandler } from './use-message-event-listner';
 
 export function useGenerateContentEvent() {
   const [isLoading, setIsLoading] = useState<boolean>(false);

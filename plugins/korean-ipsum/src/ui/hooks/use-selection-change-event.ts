@@ -1,10 +1,7 @@
 import { useCallback } from 'react';
 import { useGlobalStore } from '../store';
-import {
-  useMessageEventListener
-  
-} from './use-message-event-listner';
-import type {PluginMessageEventHandler} from './use-message-event-listner';
+import { useMessageEventListener } from './use-message-event-listner';
+import type { PluginMessageEventHandler } from './use-message-event-listner';
 
 export function useSelectionChangeEvent() {
   const updateIsSelectedTextNode = useGlobalStore(
