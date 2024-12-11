@@ -2,9 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { postUIPluginMessage } from '../utils/plugin-message';
 import { useGlobalStore } from '../store';
 import {
-  useMessageEventListener,
-  type PluginMessageEventHandler,
+  useMessageEventListener
+  
 } from './use-message-event-listner';
+import type {PluginMessageEventHandler} from './use-message-event-listner';
 
 export function useInitEvent() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
