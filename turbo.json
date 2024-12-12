@@ -18,7 +18,8 @@
     },
     "format": {
       "cache": true,
-      "outputLogs": "new-only"
+      "outputLogs": "new-only",
+      "outputs": [".cache/.prettiercache"]
     },
     "lint": {
       "cache": true,
