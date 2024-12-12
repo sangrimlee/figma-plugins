@@ -1,9 +1,16 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import { mergeConfig } from 'vite';
 import { managerHead, previewHead } from './head';
 
 const storybookConfig: StorybookConfig = {
-  framework: '@storybook/react-vite',
+  framework: {
+    name: '@storybook/react-vite',
+    options: {
+      strictMode: true,
+      builder: {
+        viteConfigPath: 'vite.config.js',
+      },
+    },
+  },
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-links',
@@ -23,13 +30,6 @@ const storybookConfig: StorybookConfig = {
   },
   managerHead,
   previewHead,
-  viteFinal(config) {
-    return mergeConfig(config, {
-      build: {
-        chunkSizeWarningLimit: 2048,
-      },
-    });
-  },
 };
 
 export default storybookConfig;

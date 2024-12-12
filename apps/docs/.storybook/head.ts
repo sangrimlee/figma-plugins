@@ -1,6 +1,11 @@
-export const managerHead = (head: string) => {
+import type { StorybookConfig } from '@storybook/react-vite';
+
+type ManagerHead = NonNullable<StorybookConfig['managerHead']>;
+type PreviewHead = NonNullable<StorybookConfig['previewHead']>;
+
+export const managerHead: ManagerHead = (head) => {
   return `
-    ${head}
+    ${head ?? ''}
     <meta property="og:title" content="Design System" />
     <meta
       property="og:description"
@@ -13,9 +18,9 @@ export const managerHead = (head: string) => {
   `;
 };
 
-export const previewHead = (head: string) => {
+export const previewHead: PreviewHead = (head) => {
   return `
-    ${head}
+    ${head ?? ''}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
