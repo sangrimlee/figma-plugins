@@ -30,12 +30,11 @@ const preview: Preview = {
           name: 'Figma Plugin',
           styles: {
             width: '384px',
-            height: '432px',
+            height: '512px',
           },
           type: 'desktop',
         },
       ],
-      defaultViewport: 'responsive',
     },
   },
   decorators: [
