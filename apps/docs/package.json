@@ -8,8 +8,7 @@
     "clean": "rm -rf .turbo storybook-static node_modules",
     "dev": "storybook dev -p 6006 --no-open",
     "format": "prettier --check . --ignore-path ../../.gitignore",
-    "lint": "eslint '{.storybook,stories}/**/*.{ts,tsx}' --fix",
-    "lint:check": "eslint '{.storybook,stories}/**/*.{ts,tsx}' --max-warnings=0",
+    "lint": "eslint",
     "start": "http-server storybook-static",
     "typecheck": "tsc --noEmit"
   },

@@ -8,8 +8,7 @@
     "clean": "rm -rf .turbo dist node_modules",
     "dev": "webpack --watch",
     "format": "prettier --check . --ignore-path ../../.gitignore",
-    "lint": "eslint './src/**/*.{ts,tsx}' --fix",
-    "lint:check": "eslint './src/**/*.{ts,tsx}' --max-warnings=0",
+    "lint": "eslint",
     "typecheck": "tsc --noEmit"
   },
   "prettier": "@figma-plugins/prettier-config",
