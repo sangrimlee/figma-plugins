@@ -18,16 +18,18 @@
     },
     "format": {
       "cache": true,
-      "outputLogs": "new-only"
+      "outputLogs": "new-only",
+      "outputs": [".cache/.prettiercache"]
     },
     "lint": {
-      "cache": true
-    },
-    "lint:check": {
-      "cache": true
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": [".cache/.eslintcache"]
     },
     "typecheck": {
-      "cache": true
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": [".cache/tsbuildinfo.json"]
     }
   }
 }

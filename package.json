@@ -8,13 +8,14 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
     "clean:workspace": "turbo run clean",
     "dev": "turbo run dev",
-    "format": "turbo run format -- --write --cache",
-    "format:check": "turbo run format -- --cache",
+    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
     "gen:plugin": "turbo gen plugin",
-    "lint": "turbo run lint",
-    "lint:check": "turbo run lint:check",
+    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "typecheck": "turbo run typecheck"
   },
   "prettier": "@figma-plugins/prettier-config",

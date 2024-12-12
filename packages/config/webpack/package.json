@@ -6,9 +6,8 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
-    "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint src --fix",
-    "lint:check": "eslint src --max-warnings=0",
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "lint": "eslint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

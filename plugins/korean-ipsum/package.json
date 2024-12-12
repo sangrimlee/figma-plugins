@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "webpack",
-    "clean": "rm -rf .turbo dist node_modules",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "webpack --watch",
     "format": "prettier --check . --ignore-path ../../.gitignore",
-    "lint": "eslint './src/**/*.{ts,tsx}' --fix",
+    "lint": "eslint",
     "lint:check": "eslint './src/**/*.{ts,tsx}' --max-warnings=0",
     "typecheck": "tsc --noEmit"
   },
