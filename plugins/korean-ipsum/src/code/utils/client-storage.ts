@@ -14,6 +14,6 @@ export async function getClientStorage<T>(key: StorageKey, defaultValue: T) {
   return value;
 }
 
-export function setClientStorage<T>(key: StorageKey, value: T) {
+export function setClientStorage(key: StorageKey, value: unknown) {
   return figma.clientStorage.setAsync(STORAGE_KEYS[key], value);
 }

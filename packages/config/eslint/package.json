@@ -2,21 +2,28 @@
   "name": "@figma-plugins/eslint-config",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../../.gitignore"
   },
   "prettier": "@figma-plugins/prettier-config",
   "dependencies": {
-    "@vercel/style-guide": "^6.0.0",
-    "eslint-config-turbo": "catalog:turbo",
-    "eslint-plugin-mdx": "^3.1.5",
-    "eslint-plugin-storybook": "^0.11.1"
+    "@eslint/compat": "^1.2.4",
+    "@eslint/js": "^9.16.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-storybook": "^0.11.1",
+    "eslint-plugin-turbo": "catalog:turbo",
+    "typescript-eslint": "^8.18.0"
   },
   "devDependencies": {
     "@figma-plugins/prettier-config": "workspace:*",
-    "@types/eslint": "^8.56.10",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "typescript": "catalog:"
   },
   "peerDependencies": {
